@@ -71,3 +71,9 @@ let paddleRightColor = paddleRightColorConst; //... prawej.
 
 let ballColor = ballColorConst; //Kolor pilki zmienny w czasie gry.
 //-------------------------------------------
+
+
+//-------------------WYNIKI------------------------
+let leftScore = 0; //Wynik paletki lewej (ile razy wygrala).
+let rightScore = 0; //... prawej ...
+//-------------------------------------------

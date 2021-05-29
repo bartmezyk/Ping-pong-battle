@@ -14,12 +14,12 @@ const ballMove = () =>
     //Odbicie pilki od lewej krawedzi pola gry (przegrana paletki lewej).
 	if((ballX + ballSize) < 0)
     {
-        ;//+++++Przegrana lewej paletki+++++
+        gameOver('left');
     } 
     //Odbicie pilki od prawej krawedzi pola gry (przegrana paletki prawej).
 	else if(ballX > canvasWidth)
     {
-        ;//+++++Przegrana prawej paletki+++++
+        gameOver('right');
     }
 
     //--------------------- ODBICIA PILKI OD KRAWEDZI PALETEK ----------------------
