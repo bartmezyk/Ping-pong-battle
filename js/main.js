@@ -1,4 +1,0 @@
-drawPitch();
-drawPaddleLeft();
-drawPaddleRight();
-drawBall();
