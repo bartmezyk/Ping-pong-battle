@@ -1,0 +1,15 @@
+.resetButton
+{
+    height: 38px;
+    background-color: #252525;
+	transition: .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+    line-height: 38px;
+    border-top: 1px solid white;
+
+    &:hover
+    {
+        background-color: #9C0202;
+    }
+}
