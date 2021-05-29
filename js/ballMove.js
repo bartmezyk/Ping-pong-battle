@@ -22,8 +22,10 @@ const ballMove = () =>
         ;//+++++Przegrana prawej paletki+++++
     }
 
-    //--------------------- ODBICIA PILKI OD DLUZSZYCH KRAWEDZI PALETEK ----------------------
-	if((ballX <= (paddleX + paddleWidth)) && (ballX >= (paddleX + paddleWidth + ballXSpeed))) //Odbicie pilki od dluzszej krawedzi paletki lewej.
+    //--------------------- ODBICIA PILKI OD KRAWEDZI PALETEK ----------------------
+
+    //Odbicie pilki od dluzszej krawedzi paletki lewej.
+	if((ballX <= (paddleX + paddleWidth)) && (ballX >= (paddleX + paddleWidth + ballXSpeed)))
 	{
 		if((ballY > (paddleLeftY - ballSize)) && ((ballY + ballSize) < (paddleLeftY + paddleLeftHeight + ballSize)))
 		{
@@ -34,7 +36,8 @@ const ballMove = () =>
 			ballMoveRight = true;
 		}
 	}
-	else if(((ballX + ballSize) >= (canvasWidth - paddleX - paddleWidth)) && ((ballX + ballSize) <= (canvasWidth - paddleX - paddleWidth + ballXSpeed))) //Odbicie pilki od dluzszej krawedzi paletki prawej.
+    //Odbicie pilki od dluzszej krawedzi paletki prawej.
+	else if(((ballX + ballSize) >= (canvasWidth - paddleX - paddleWidth)) && ((ballX + ballSize) <= (canvasWidth - paddleX - paddleWidth + ballXSpeed)))
 	{
 		if((ballY > (paddleRightY - ballSize)) && ((ballY + ballSize) < (paddleRightY + paddleRightHeight + ballSize)))
 		{
@@ -45,8 +48,62 @@ const ballMove = () =>
 			ballMoveRight = false;
 		}
 	}
-    //--------------------- ODBICIA PILKI OD KROTSZYCH KRAWEDZI PALETEK ----------------------
-    
+    //Odbicie pilki od krotszej krawedzi paletki lewej.
+    else if((ballX < (paddleX + paddleWidth)) && (ballX > (paddleX - paddleWidth)))
+	{
+        //Krotsza krawedz dolna.
+		if((ballY <= (paddleLeftY + paddleLeftHeight)) && (ballY > (paddleLeftY + (paddleLeftHeight / 2))))
+		{
+            //Jesli pilka porusza sie w gore to zmien zwrot predkosci na przeciwny.
+			if(ballYSpeed < 0) ballYSpeed = -ballYSpeed;
+			//A jesli zwrot zostal juz zmieniony i pilka porusza sie w dol, to nie pozwol, aby przesuwanie paletki w strone pilki spowodowalo jej nalozenie na pilke, a jedynie przesuniecie samej pilki o wartosc przesuniecia paletki + zwiekszenie predkosci pilki.
+            else
+			{
+				ballY = paddleLeftY + paddleLeftHeight;
+				ballYSpeed++;
+			}
+		}
+        //Krotsza krawedz gorna.
+		else if(((ballY + ballSize) >= paddleLeftY) && ((ballY + ballSize) < (paddleLeftY + (paddleLeftHeight / 2))))
+		{
+            //Jesli pilka porusza sie w dol to zmien zwrot predkosci na przeciwny.
+			if(ballYSpeed > 0) ballYSpeed = -ballYSpeed;
+			//A jesli zwrot zostal juz zmieniony i pilka porusza sie w gore, to ...
+            else
+			{
+				ballY = paddleLeftY - ballSize;
+				ballYSpeed--;
+			}
+		}
+	}
+    //Ddbicie pilki od krotszej krawedzi paletki prawej.
+	else if((ballX > (canvasWidth - paddleX - paddleWidth - ballSize)) && (ballX < (canvasWidth - paddleX)))
+	{
+        //Krotsza krawedz dolna.
+		if((ballY <= (paddleRightY + paddleRightHeight)) && (ballY > (paddleRightY + (paddleRightHeight / 2))))
+		{
+            //Jesli pilka porusza sie w gore to zmien zwrot predkosci na przeciwny.
+			if(ballYSpeed < 0) ballYSpeed = -ballYSpeed;
+            //A jesli zwrot zostal juz zmieniony i pilka porusza sie w dol, to ...
+			else
+			{
+				ballY = paddleRightY + paddleRightHeight;
+				ballYSpeed++;
+			}
+		}
+        //Krotsza krawedz gorna.
+		else if(((ballY + ballSize) >= paddleRightY) && ((ballY + ballSize) < (paddleRightY + (paddleRightHeight / 2))))
+		{
+            //Jesli pilka porusza sie w dol to zmien zwrot predkosci na przeciwny.
+			if(ballYSpeed > 0) ballYSpeed = -ballYSpeed;
+			//A jesli zwrot zostal juz zmieniony i pilka porusza sie w gore, to ...
+            else
+			{
+				ballY = paddleRightY - ballSize;
+				ballYSpeed--;
+			}
+		}
+	}
 	
 	ballX += ballXSpeed;
 	ballY += ballYSpeed;
