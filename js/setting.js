@@ -1,11 +1,13 @@
+//Zmien kolory przyciskow w menu ustawien.
 const settingMain = e =>
 {
+    //Zabranie ze wszystkich przyciskow koloru aktywnego (czyli rowniez z tego, ktory go mial) (poprzez usuniecie klasy).
     chooseButtons.forEach(button =>
     {
         button.classList.remove('chooseButton--active');
     });
 
-    e.target.classList.add('chooseButton--active');
+    e.target.classList.add('chooseButton--active'); //Nadanie koloru aktywnego na przycisk wlasnie klikniety (e.target) (poprzez nadanie klasy).
 }
 
 const settingMode = e =>
