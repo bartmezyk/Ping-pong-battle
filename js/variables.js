@@ -1,7 +1,7 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-//--------------------POLE GRY-----------------------
+//-------------------- POLE GRY -----------------------
 canvas.width = 1000; //Szerokosc pola gry (wartosci dobrane wg proporcji szerokosci i dlugosci standardowego stolu do tenisa stolowego).
 canvas.height = 556; //Wysokosc ... .
 
@@ -12,8 +12,8 @@ const canvasHeight = canvas.height;
 //-------------------------------------------
 
 
-//-------------------PALETKA------------------------
-//-----wartosci startowe-----
+//------------------- PALETKA ------------------------
+//----- wartosci startowe -----
 const paddleWidth = 20;
 
 const paddleLeftHeightConst = 100; //Startowa wysokosc lewej paletki.
@@ -21,7 +21,7 @@ const paddleRightHeightConst = 100; //... prawej.
 
 const paddleX = 70; //O ile paletki sa odsuniete od krotszych krawedzi canvas (lewa paletka od lewej krawedzi, a prawa od prawej).
 
-//-----wartosci zmienne-----
+//----- wartosci zmienne -----
 let paddleLeftHeight = paddleLeftHeightConst; //Wysokosc lewej paletki zmienna w czasie gry.
 let paddleRightHeight = paddleRightHeightConst; //... prawej.
 
@@ -30,21 +30,26 @@ let paddleRightY = canvasHeight / 2 - paddleRightHeight / 2; //... prawa.
 //-------------------------------------------
 
 
-//-----------------PILKA--------------------------
-//-----wartosci startowe-----
+//----------------- PILKA --------------------------
+//----- wartosci startowe -----
 const ballSizeConst = 20; //Startowa dlugosc boku kwadratu 'pilki'
 
-//-----wartosci zmienne-----
+const ballXSpeedConst = 5; //Startowa predkosc pilki wzdluz osi X.
+const ballYSpeedConst = 5; //... wzdluz osi Y.
+
+//----- wartosci zmienne -----
 let ballSize = ballSizeConst; //Dlugosc boku kwadratu 'pilki' zmienna w czasie gry.
 
 let ballX = canvasWidth/2 - ballSize/2; //Polozenie lewego gornego rogu 'pilki' wzdluz osi X (na poczatku gry pilka jest dokladnie na srodku boiska).
 let ballY = canvasHeight/2 - ballSize/2; //... wzdluz osi Y.
 
+let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X zmienna w czasie gry.
+let ballYSpeed = ballYSpeedConst; //... wzdluz osi Y.
 //-------------------------------------------
 
 
-//---------------------KOLORY----------------------
-//-----wartosci startowe-----
+//--------------------- KOLORY ----------------------
+//----- wartosci startowe -----
 const pitchColorConst = '#000000'; //Startowy kolor boiska.
 const netColorConst = '#FFFFFF'; //Startowy kolor siatki na srodku boiska (linia pionowa).
 const lineColorConst = '#FFFFFF'; //Startowy kolor linii poziomej na srodku boiska.
@@ -54,7 +59,7 @@ const paddleRightColorConst = '#0000FF'; //... prawej.
 
 const ballColorConst = '#ff9100'; //Startowy kolor pilki.
 
-//-----wartosci zmienne-----
+//----- wartosci zmienne -----
 let pitchColor = pitchColorConst; //Kolor boiska zmienny w czasie gry.
 let netColor = netColorConst; //Kolor siatki zmienny w czasie gry.
 let lineColor = lineColorConst; //Kolor linii poziomej zmienny w czasie gry.
