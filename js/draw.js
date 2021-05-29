@@ -24,3 +24,10 @@ const drawPaddleRight = () =>
 	ctx.fillStyle = paddleRightColor;
 	ctx.fillRect(canvasWidth - paddleX - paddleWidth, paddleRightY, paddleWidth, paddleRightHeight);
 }
+
+//Rysuj pilke.
+function drawBall()
+{
+	ctx.fillStyle = ballColor;
+	ctx.fillRect(ballX, ballY, ballSize, ballSize);
+}
