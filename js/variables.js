@@ -77,6 +77,8 @@ let ballColor = ballColorConst; //Kolor pilki zmienny w czasie gry.
 let leftScore = 5; //Wynik paletki lewej (ile razy wygrala).
 let rightScore = 6; //... prawej ...
 
+let topSpeed = 0; //Maksymalna predkosc pilki podczas pojedynczego zaladowania strony.
+
 let bounceCounter = 6; //Ilosc odbic pilki od paletek w pojedynczej rozgrywce.
 let bounceBest = 2; //Najwieksza ilosc odbic pilki od paletek podczas jednego zaladowania strony.
 //-------------------------------------------
