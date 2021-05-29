@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 //-------------------- POLE GRY -----------------------
 canvas.width = 1000; //Szerokosc pola gry (wartosci dobrane wg proporcji szerokosci i dlugosci standardowego stolu do tenisa stolowego).
-canvas.height = 556; //Wysokosc ... .
+canvas.height = 556; //Wysokosc ...
 
 const netWidth = 6; //Szerokosc pionowej siatki na srodku pola gry.
 

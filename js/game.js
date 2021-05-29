@@ -1,4 +1,4 @@
-//Odswiez pole gry i znajdujacie sie na nich elementy.
+//Odswiez pole gry i znajdujace sie na nim elementy.
 const game = () =>
 {
     drawPitch();
@@ -7,4 +7,5 @@ const game = () =>
     drawPaddleRight();
 }
 
-setInterval(game, 1000/60); //60 razy na sekunde pole gry odswiezane.
+//60 razy na sekunde pole gry odswiezane.
+setInterval(game, 1000/60);

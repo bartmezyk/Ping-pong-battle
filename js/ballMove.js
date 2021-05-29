@@ -1,9 +1,9 @@
 //Przesun pilke.
 const ballMove = () =>
 {
-    //--------------------- ODBICIA PILKI OD KRAWEDZI CANVAS ----------------------
+    //--------------------- ODBICIA PILKI OD KRAWEDZI POLA GRY ----------------------
 
-    //Odbicie pilki od dolnej lub gornej krawedzi canvas.
+    //Odbicie pilki od dolnej lub gornej krawedzi pola gry.
 	if(ballY + ballSize >= canvasHeight || ballY <= 0)
 	{
 		ballYSpeed = -ballYSpeed; //Przeciwny zwrot poruszania sie pilki w osi Y.
@@ -11,12 +11,12 @@ const ballMove = () =>
         //+++++Podszybszenie pilki+++++
 	}
 	
-    //Odbicie od lewej krawedzi canvas (przegrana paletki lewej).
+    //Odbicie pilki od lewej krawedzi pola gry (przegrana paletki lewej).
 	if((ballX + ballSize) < 0)
     {
         ;//+++++Przegrana lewej paletki+++++
     } 
-    //Odbicie od prawej krawedzi canvas (przegrana paletki prawej).
+    //Odbicie pilki od prawej krawedzi pola gry (przegrana paletki prawej).
 	else if(ballX > canvasWidth)
     {
         ;//+++++Przegrana prawej paletki+++++
