@@ -29,4 +29,40 @@ body {
   margin-right: auto;
   border: 3px solid white;
 }
+
+.bottomMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1000px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #505050;
+  border: 3px solid white;
+}
+
+.score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 207px;
+  text-align: center;
+  border-right: 3px solid white;
+}
+
+.menuHeader {
+  -ms-flex-preferred-size: 50px;
+      flex-basis: 50px;
+  background-color: #353535;
+  line-height: 330%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+}
 /*# sourceMappingURL=style.css.map */
