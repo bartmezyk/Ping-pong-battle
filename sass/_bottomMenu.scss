@@ -9,4 +9,16 @@
     background-color: #505050;
     text-align: center;
 	border: 3px solid white;
+
+    &__score
+    {
+        height: 100%;
+        width: 207px;
+        border-right: 3px solid white;
+    }
+
+    &__settings
+    {
+        flex-grow: 1;
+    }
 }

@@ -1,0 +1,31 @@
+.chooseButton
+{
+    flex-grow: 1;
+    height: 34px;
+    line-height: 34px;
+    text-transform: uppercase;
+    background-color: rgb(144, 144, 144);
+    border-right: 1px solid #fff;
+    cursor: pointer;
+    transition: .2s;
+
+    &:nth-last-child(1)
+    {
+        border-right: none;
+    }
+
+    &:hover
+    {
+        background-color: rgb(112, 112, 112);
+    }
+
+    &--active
+    {
+        background-color: $main-color;
+
+        &:hover
+        {
+            background-color: $main-color;
+        }
+    }
+}
