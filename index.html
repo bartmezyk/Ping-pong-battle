@@ -23,6 +23,46 @@
 			<canvas></canvas> <!-- Pole gry, po ktorym porusza sie pilka i paletki -->
 		</div>
 	</main>
+
+    <article> 
+		<div class="bottomMenu">
+			<section>
+				<div class="score"> <!-- Menu dolne z lewej strony do wyswietlania informacji o rozgrywce. -->
+					<header class="score__header">
+						<h2>info</h2>
+					</header>
+					<div class="info score__info">
+						<div class="info__score">Score: 0:0</div>
+						<div class="info__speed">Ball speed: </div>
+						<div class="info__topSpeed">Best ball speed: </div>
+						<div class="info__bounce">Paddle bounce: </div>
+						<div class="info__bestBounce">Best paddle bounce: </div>
+					</div>
+					<div class="buttonReset score__reset">reset</div>
+				</div>
+			</section>
+			<section>
+				<div class="settings"> <!-- Menu dolne z prawej strony do modyfikowania ustawien rozgrywki. -->
+					<header class="settings__header">
+						<h2>settings</h2>
+					</header>
+					<div class="settings__choose">
+						<div class="buttonChoose">mode</div>
+						<div class="buttonChoose">ball speed</div>
+						<div class="buttonChoose">size</div>
+						<div class="buttonChoose">color</div>
+					</div>
+                    <div class="settings__area">
+                        <div class="setting__areaLeft"></div>
+					    <div class="setting__areaRight"></div>
+					    <div class="settings__buttonPlace"></div>
+                    </div>
+					<div class="buttonReset settings__reset">reset all settings</div>
+				</div>
+			</section>
+		</div>
+	</article>
+
     <script src="js/variables.js"></script>
     <script src="js/draw.js"></script>
     <script src="js/ballMove.js"></script>

@@ -7,7 +7,7 @@ const game = () =>
     drawPaddleRight();
 }
 
-//Wykonaj czynnosci po przegranej ktorej z paletek.
+//Wykonaj czynnosci po przegranej ktorejs z paletek.
 const gameOver = defeatedPaddle =>
 {
 	if(defeatedPaddle == 'left') rightScore++; //Przegrana paletki lewej.
