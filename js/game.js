@@ -12,7 +12,6 @@ const gameOver = defeatedPaddle =>
 {
 	if(defeatedPaddle == 'left') rightScore++; //Przegrana paletki lewej.
 	else if(defeatedPaddle == 'right') leftScore++; //Przegrana paletki prawej.
-    console.log('Paletka lewa: ' + leftScore+'; paletka prawa: ' + rightScore)
 	
 	ballX = canvasWidth / 2 - ballSize / 2; //Polozenie pilki na srodku wzdluz osi X.
 	//ballY = canvasHeight/2 - ballSize/2; //Polozenie pilki na srodku wzdluz osi Y.
