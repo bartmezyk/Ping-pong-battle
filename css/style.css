@@ -6,7 +6,18 @@
 body {
   background-image: url("../image/dark-triangles.png");
   /*This pattern is downloaded from www.subtlepatterns.com. If you need more, that's where to get'em.*/
-  color: #fff;
   font-family: sans-serif;
+  color: #fff;
+}
+
+.mainHeader__plain {
+  font-family: 'Lobster', cursive;
+  font-size: 45px;
+  text-align: center;
+  margin: 15px;
+}
+
+.mainHeader__color {
+  color: orange;
 }
 /*# sourceMappingURL=style.css.map */
