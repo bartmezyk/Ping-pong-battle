@@ -73,7 +73,19 @@ let ballColor = ballColorConst; //Kolor pilki zmienny w czasie gry.
 //-------------------------------------------
 
 
-//-------------------WYNIKI------------------------
-let leftScore = 0; //Wynik paletki lewej (ile razy wygrala).
-let rightScore = 0; //... prawej ...
+//------------------- WYNIKI ------------------------
+let leftScore = 5; //Wynik paletki lewej (ile razy wygrala).
+let rightScore = 6; //... prawej ...
+
+let bounceCounter = 6; //Ilosc odbic pilki od paletek w pojedynczej rozgrywce.
+let bounceBest = 2; //Najwieksza ilosc odbic pilki od paletek podczas jednego zaladowania strony.
+//-------------------------------------------
+
+
+//------------------- INNE ------------------------
+const infoScore      = document.querySelector('.info__score');
+const infoSpeed      = document.querySelector('.info__speed');
+const infoSpeedBest  = document.querySelector('.info__speedBest');
+const infoBounce     = document.querySelector('.info__bounce');
+const infoBounceBest = document.querySelector('.info__bounceBest');
 //-------------------------------------------

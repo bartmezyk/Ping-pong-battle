@@ -24,3 +24,7 @@ const gameOver = defeatedPaddle =>
 
 //60 razy na sekunde pole gry odswiezane.
 setInterval(game, 1000/60);
+
+showScore();
+
+showBounce();
