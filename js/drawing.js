@@ -1,8 +1,8 @@
-//rysuj boisko
+//Rysuj boisko.
 const drawPitch = () =>
 {
 	ctx.fillStyle = pitchColor;
-	ctx.fillRect(0, 0, canvasWidth, canvasHeight); //rysuje prostokat stanowiacy boisko
+	ctx.fillRect(0, 0, canvasWidth, canvasHeight); //Rysuje prostokat stanowiacy boisko.
 	
 	ctx.fillStyle = netColor;
 	ctx.fillRect(canvasWidth/2 - netWidth/2, 0, netWidth, canvasHeight);
