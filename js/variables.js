@@ -16,8 +16,8 @@ const canvasHeight = canvas.height;
 //----- wartosci startowe -----
 const paddleWidth = 20;
 
-const paddleLeftHeightConst = 100; //Startowa wysokosc lewej paletki.
-const paddleRightHeightConst = 100; //... prawej.
+const paddleLeftHeightConst = 300; //Startowa wysokosc lewej paletki.
+const paddleRightHeightConst = 300; //... prawej.
 
 const paddleX = 70; //O ile paletki sa odsuniete od krotszych krawedzi canvas (lewa paletka od lewej krawedzi, a prawa od prawej).
 
@@ -45,6 +45,8 @@ let ballY = canvasHeight/2 - ballSize/2; //... wzdluz osi Y.
 
 let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X zmienna w czasie gry.
 let ballYSpeed = ballYSpeedConst; //... wzdluz osi Y.
+
+let ballMoveRight = true; //Pilka porusza sie w prawo (true).
 //-------------------------------------------
 
 

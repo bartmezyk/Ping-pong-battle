@@ -21,6 +21,32 @@ const ballMove = () =>
     {
         ;//+++++Przegrana prawej paletki+++++
     }
+
+    //--------------------- ODBICIA PILKI OD DLUZSZYCH KRAWEDZI PALETEK ----------------------
+	if((ballX <= (paddleX + paddleWidth)) && (ballX >= (paddleX + paddleWidth + ballXSpeed))) //Odbicie pilki od dluzszej krawedzi paletki lewej.
+	{
+		if((ballY > (paddleLeftY - ballSize)) && ((ballY + ballSize) < (paddleLeftY + paddleLeftHeight + ballSize)))
+		{
+			ballXSpeed = -ballXSpeed;
+
+			//+++++Podszybszenie pilki+++++
+
+			ballMoveRight = true;
+		}
+	}
+	else if(((ballX + ballSize) >= (canvasWidth - paddleX - paddleWidth)) && ((ballX + ballSize) <= (canvasWidth - paddleX - paddleWidth + ballXSpeed))) //Odbicie pilki od dluzszej krawedzi paletki prawej.
+	{
+		if((ballY > (paddleRightY - ballSize)) && ((ballY + ballSize) < (paddleRightY + paddleRightHeight + ballSize)))
+		{
+			ballXSpeed = -ballXSpeed;
+
+			//+++++Podszybszenie pilki+++++
+
+			ballMoveRight = false;
+		}
+	}
+    //--------------------- ODBICIA PILKI OD KROTSZYCH KRAWEDZI PALETEK ----------------------
+    
 	
 	ballX += ballXSpeed;
 	ballY += ballYSpeed;
