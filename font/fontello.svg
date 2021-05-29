@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2021 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="tennis" unicode="&#xe839;" d="M300 775c-166 0-300-134-300-300s134-300 300-300l250 0 225-225c16-16 25-25 45-25 7 0 14 0 22 8 8 8 8 15 8 22 0 20-11 31-25 45l-225 225 0 250c0 166-134 300-300 300z m250-400l0-150-150 0z m-475-200c-41 0-75-34-75-75 0-41 34-75 75-75s75 34 75 75c0 41-34 75-75 75z" horiz-adv-x="850" />
+</font>
+</defs>
+</svg>

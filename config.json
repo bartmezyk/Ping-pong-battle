@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "8a4eb4f98d8e0f3686a741c952b03c08",
+      "css": "tennis",
+      "code": 59449,
+      "src": "maki"
+    }
+  ]
+}
