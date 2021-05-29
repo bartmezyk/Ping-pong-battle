@@ -1,1 +1,3 @@
 drawPitch();
+drawPaddleLeft();
+drawPaddleRight();
