@@ -17,6 +17,11 @@
         transform: translate(-50%, -50%);
     }
 
+    &--hidden
+    {
+        opacity: 0;
+    }
+
     &:hover
     {
         background-color: darken($main-color, 10%);

@@ -92,4 +92,6 @@ const infoBounce     = document.querySelector('.info__bounce');
 const infoBounceBest = document.querySelector('.info__bounceBest');
 
 const chooseButtons = document.querySelectorAll('.chooseButton');
+
+const settingsContents = document.querySelectorAll('.settingsContent');
 //-------------------------------------------
