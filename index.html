@@ -50,13 +50,113 @@
                     <div class="btnColor chooseButton">color</div>
                 </div>
                 <div class="settings__area">
-                    <div class="setting__areaLeft">
-                        <div><input type="radio" name="mode" id="sinPlayWithoutCom"><label for="sinPlayWithoutCom"> Single player - without computer </label></div>
-                        <div><input type="radio" name="mode" id="sinPlayWithCom"><label for="sinPlayWithCom"> Single player - with computer </label></div>
-                        <div><input type="radio" name="mode" id="multiPlay"><label for="multiPlay"> Multiplayer (Q A) ([ ,) </label></div>
+                    <div class="settingsContent settingsContent--active">
+                        <div class="settingsContent__left">
+                            <div>
+                                <input type="radio" name="mode" id="sinPlayWithoutCom" checked="checked">
+                                <label for="sinPlayWithoutCom"> Single player - without computer</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="mode" id="sinPlayWithCom">
+                                <label for="sinPlayWithCom"> Single player - with computer</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="mode" id="multiPlay">
+                                <label for="multiPlay"> Multiplayer (Q A) ([ ,)</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="setting__areaRight"></div>
-                    <div class="settings__buttonPlace"></div>
+                    <div class="settingsContent">
+                        <div class="settingsContent__left">
+                            <div>
+                                Actual speed: 
+                                <label for="speedX">X: </label><input type="number" id="speedX" class="settingsContent__numInp" step="0.1">, 
+                                <label for="speedY">Y: </label><input type="number" id="speedY" class="settingsContent__numInp" step="0.1">
+                            </div>
+                            <div>
+                                Bounce increment: 
+                                <label for="speedXIncr">X: </label><input type="number" id="speedXIncr" class="settingsContent__numInp" step="0.01">, 
+                                <label for="speedYIncr">Y: </label><input type="number" id="speedYIncr" class="settingsContent__numInp" step="0.01">
+                            </div>
+                        </div>
+                        <div class="settingsContent__right">
+                            <div>
+                                <input type="checkbox" id="chBox" >
+                                <label class="settingString" for="chBox"> Max speed limit</label>
+                            </div>
+                            <div>
+                                <div>
+                                    <label class="settingString">X: </label>
+                                    <input type="number" id="maxSpX" class="settingsContent__numInp" min="0" step="0.1">
+                                </div>
+                                <div>
+                                    <label class="settingString">Y: </label>
+                                    <input type="number" id="maxSpY" class="settingsContent__numInp" min="0" step="0.1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="applyButton">
+                            <div class="applyButton__text">
+                                apply
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsContent">
+                        <div class="settingsContent__left">
+                            <div>
+                                <input type="number" id="paddleLeftHeight" step="1">
+                                <label for="paddleLeftHeight"> - left paddle height</label>
+                            </div>
+                            <div>
+                                <input type="number" id="paddleRightHeight" step="1">
+                                <label for="paddleRightHeight"> - right paddle height</label>
+                            </div>
+                            <div>
+                                <input type="number" id="ballSize" step="1">
+                                <label for="ballSize"> - ball size</label>
+                            </div>
+                        </div>
+                        <div class="applyButton">
+                            <div class="applyButton__text">
+                                apply
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsContent">
+                        <div class="settingsContent__left">
+                            <div>
+                                <input type="text" id="color0" maxlength="7">
+                                <label for="color0"> - pitch</label>
+                            </div>
+                            <div>
+                                <input type="text" id="color1" maxlength="7">
+                                <label for="color1"> - net</label>
+                            </div>
+                            <div>
+                                <input type="text" id="color2" maxlength="7">
+                                <label for="color2"> - lines</label>
+                            </div>
+                        </div>
+                        <div class="settingsContent__right">
+                            <div>
+                                <input type="text" id="color3" maxlength="7">
+                                <label for="color3"> - left paddle</label>
+                            </div>
+                            <div>
+                                <input type="text" id="color4" maxlength="7">
+                                <label for="color4"> - right paddle</label>
+                            </div>
+                            <div>
+                                <input type="text" id="color5" maxlength="7">
+                                <label for="color5"> - ball</label>
+                            </div>
+                        </div>
+                        <div class="applyButton">
+                            <div class="applyButton__text">
+                                apply
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="resetButton settings__reset">reset all settings</div>
             </div>

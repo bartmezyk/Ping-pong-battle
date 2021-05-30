@@ -1,0 +1,24 @@
+.applyButton
+{
+    flex-basis: 16%;
+    position: relative;
+    box-sizing: border-box;
+    transition: .2s;
+    background-color: $main-color;
+    border-left: 1px solid white;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &__text
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover
+    {
+        background-color: darken($main-color, 10%);
+    }
+}
