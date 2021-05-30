@@ -43,16 +43,28 @@ const ballSizeConst = 20; //Startowa dlugosc boku kwadratu 'pilki'
 const ballXSpeedConst = 5; //Startowa predkosc pilki wzdluz osi X.
 const ballYSpeedConst = 5; //... wzdluz osi Y.
 
+const ballXSpeedIncrConst = .1; //Startowa wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
+const ballYSpeedIncrConst = .1; //... osi Y.
+
+const ballXSpeedMaxConst = 10; //Startowa ustawialna maksymalna wartosc predkosci poruszania sie pilki wzdluz osi X.
+const ballYSpeedMaxConst = 10; //... osi Y.
+
 //----- wartosci zmienne -----
 let ballSize = ballSizeConst; //Dlugosc boku kwadratu 'pilki'.
 
 let ballX = canvasWidth/2 - ballSize/2; //Polozenie lewego gornego rogu 'pilki' wzdluz osi X (na poczatku gry pilka jest dokladnie na srodku boiska).
 let ballY = canvasHeight/2 - ballSize/2; //... wzdluz osi Y.
 
+let ballMoveRight = true; //Pilka porusza sie w prawo (true).
+
 let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X.
 let ballYSpeed = ballYSpeedConst; //... wzdluz osi Y.
 
-let ballMoveRight = true; //Pilka porusza sie w prawo (true).
+let ballXSpeedIncr = ballXSpeedIncrConst; //Wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
+let ballYSpeedIncr = ballYSpeedIncrConst; //... osi Y.
+
+let ballXSpeedMax = ballXSpeedMaxConst; //Ustawialna maksymalna wartosc predkosci poruszania sie pilki wzdluz osi X.
+let ballYSpeedMax = ballYSpeedMaxConst; //... osi Y.
 //-------------------------------------------
 
 
@@ -70,7 +82,7 @@ const ballColorConst = '#ff9100'; //Startowy kolor pilki.
 //----- wartosci zmienne -----
 let pitchColor = pitchColorConst; //Kolor boiska.
 let netColor = netColorConst; //Kolor siatki.
-let lineColor = lineColorConst; //Kolor linii poziomej.
+let linesColor = lineColorConst; //Kolor linii poziomej.
 
 let padLColor = padLColorConst; //Kolor paletki lewej.
 let padRColor = padRColorConst; //... prawej.
@@ -116,10 +128,10 @@ const inpHeightPadL = document.getElementById('heightPadL');
 const inpHeightPadR = document.getElementById('heightPadR');
 const inpSizeBall = document.getElementById('sizeBall');
 
-const inpColPitch = document.getElementById('colPitch');
-const inpColNet = document.getElementById('colNet');
-const inpColLines = document.getElementById('colLines');
-const inpColPadL = document.getElementById('colPadL');
-const inpColPadR = document.getElementById('colPadR');
-const inpColBall = document.getElementById('colBall');
+const inpColorPitch = document.getElementById('colorPitch');
+const inpColorNet = document.getElementById('colorNet');
+const inpColorLines = document.getElementById('colorLines');
+const inpColorPadL = document.getElementById('colorPadL');
+const inpColorPadR = document.getElementById('colorPadR');
+const inpColorBall = document.getElementById('colorBall');
 //-------------------------------------------

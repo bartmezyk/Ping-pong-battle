@@ -43,8 +43,29 @@ const settingColor = e =>
 //Wstaw wartosci odpowiednich zmiennych do inputow w menu ustawien.
 const settingInputsUpdate = () =>
 {
-    inpSpeedPadL.value = ballXSpeedConst;
+    inpSpeedPadL.value = padLSpeed;
+    inpSpeedPadR.value = padRSpeed;
+
+    inpSpeedX.value = ballXSpeed;
+    inpSpeedY.value = ballYSpeed;
+    inpSpeedXIncr.value = ballXSpeedIncr;
+    inpSpeedYIncr.value = ballYSpeedIncr;
+    inpSpeedXMax.value = ballXSpeedMax;
+    inpSpeedYMax.value = ballYSpeedMax;
+
+    inpHeightPadL.value = padLHeight;
+    inpHeightPadR.value = padRHeight;
+    inpSizeBall.value = ballSize;
+
+    inpColorPitch.value = pitchColor;
+    inpColorNet.value = netColor;
+    inpColorLines.value = linesColor;
+    inpColorPadL.value = padLColor;
+    inpColorPadR.value = padRColor;
+    inpColorBall.value = ballColor;
 }
+
+settingInputsUpdate();
 
 document.querySelector('.btnMode').addEventListener('click', settingMode)
 document.querySelector('.btnSpeed').addEventListener('click', settingBallSpeed)

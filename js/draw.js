@@ -7,7 +7,7 @@ const drawPitch = () =>
 	ctx.fillStyle = netColor;
 	ctx.fillRect(canvasWidth/2 - netWidth/2, 0, netWidth, canvasHeight); //Rysuj siatke pionowa na srodku boiska.
 
-	ctx.fillStyle = lineColor;
+	ctx.fillStyle = linesColor;
 	ctx.fillRect(0, canvasHeight/2, canvasWidth, 1); //Rysuj linie pozioma na srodku boiska.
 }
 
