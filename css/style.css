@@ -175,6 +175,10 @@ body {
   padding: 4px 0 0 4px;
 }
 
+.settingsContent__right--deactive {
+  display: none;
+}
+
 .settingsContent__numInp {
   width: 70px;
 }

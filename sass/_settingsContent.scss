@@ -18,6 +18,11 @@
     {
         flex-basis: 42%;
         padding: 4px 0 0 4px;
+
+        &--deactive
+        {
+            display: none;
+        }
     }
 
     &__numInp

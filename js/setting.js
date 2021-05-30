@@ -13,8 +13,7 @@ const settingMain = e =>
     //Wstawienie odpowiedniej dla kliknietego przycisku zawartosci do diva o klasie 'settingsContent' w menu ustawien.
     settingsContents.forEach((content, index) =>
     {
-        //Usuniecie zawartosci ze wszystkich divow (czyli rowniez z tego, ktory ja mial) (poprzez usuniecie klasy).
-        content.classList.remove('settingsContent--active');
+        content.classList.remove('settingsContent--active'); //Usuniecie zawartosci ze wszystkich divow (czyli rowniez z tego, ktory ja mial) (poprzez usuniecie klasy).
 
         //Nadanie zawartosci divowi o atrybucie 'key' takim samym, jak atrybutu 'key' kliknietego przycisku (poprzez nadanie klasy).
         if(index == e.target.dataset.key) content.classList.add('settingsContent--active');
@@ -41,7 +40,13 @@ const settingColor = e =>
     settingMain(e);
 }
 
+//Wstaw wartosci odpowiednich zmiennych do inputow w menu ustawien.
+const settingInputsUpdate = () =>
+{
+    ;
+}
+
 document.querySelector('.btnMode').addEventListener('click', settingMode)
-document.querySelector('.btnSpeed').addEventListener('click', settingSpeed)
+document.querySelector('.btnSpeed').addEventListener('click', settingBallSpeed)
 document.querySelector('.btnSize').addEventListener('click', settingSize)
 document.querySelector('.btnColor').addEventListener('click', settingColor)

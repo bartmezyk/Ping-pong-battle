@@ -68,16 +68,26 @@
 
                         <div class="settingsContent__right">
                             <div>
-                                <input type="radio" name="comMode" id="easyComMode">
-                                <label for="easyComMode"> Easy</label>
+                                <input type="radio" name="modeCom" id="easyCom">
+                                <label for="easyCom"> Easy</label>
                             </div>
                             <div>
-                                <input type="radio" name="comMode" id="medComMode" checked="checked">
-                                <label for="medComMode"> Medium</label>
+                                <input type="radio" name="modeCom" id="medCom" checked="checked">
+                                <label for="medCom"> Medium</label>
                             </div>
                             <div>
-                                <input type="radio" name="comMode" id="hardComMode">
-                                <label for="hardComMode"> Hard</label>
+                                <input type="radio" name="modeCom" id="hardCom">
+                                <label for="hardCom"> Hard</label>
+                            </div>
+                        </div>
+                        <div class="settingsContent__right settingsContent__right--deactive">
+                            <div>
+                                <input type="number" id="speedPadL" min="1" step="1">
+                                <label for="speedPadL"> - left paddle speed</label>
+                            </div>
+                            <div>
+                                <input type="number" id="speedPadR" min="1" step="1">
+                                <label for="speedPadR"> - right paddle speed</label>
                             </div>
                         </div>
                         <div class="applyButton applyButton--hidden"></div>
@@ -98,16 +108,16 @@
                         <div class="settingsContent__right">
                             <div>
                                 <input type="checkbox" id="chBox" >
-                                <label class="settingString" for="chBox"> Max speed limit</label>
+                                <label for="chBox"> Max speed limit</label>
                             </div>
                             <div>
                                 <div>
-                                    <label class="settingString">X: </label>
-                                    <input type="number" id="maxSpX" class="settingsContent__numInp" min="0" step="0.1">
+                                    <label for="speedXMax">X: </label>
+                                    <input type="number" id="speedXMax" class="settingsContent__numInp" min="0" step="0.1">
                                 </div>
                                 <div>
-                                    <label class="settingString">Y: </label>
-                                    <input type="number" id="maxSpY" class="settingsContent__numInp" min="0" step="0.1">
+                                    <label for="speedYMax">Y: </label>
+                                    <input type="number" id="speedYMax" class="settingsContent__numInp" min="0" step="0.1">
                                 </div>
                             </div>
                         </div>
@@ -120,16 +130,16 @@
                     <div data-key="2" class="settingsContent">
                         <div class="settingsContent__left">
                             <div>
-                                <input type="number" id="paddleLeftHeight" step="1">
-                                <label for="paddleLeftHeight"> - left paddle height</label>
+                                <input type="number" id="heightPadL" step="1">
+                                <label for="heightPadL"> - left paddle height</label>
                             </div>
                             <div>
-                                <input type="number" id="paddleRightHeight" step="1">
-                                <label for="paddleRightHeight"> - right paddle height</label>
+                                <input type="number" id="heightPadR" step="1">
+                                <label for="heightPadR"> - right paddle height</label>
                             </div>
                             <div>
-                                <input type="number" id="ballSize" step="1">
-                                <label for="ballSize"> - ball size</label>
+                                <input type="number" id="sizeBall" step="1">
+                                <label for="sizeBall"> - ball size</label>
                             </div>
                         </div>
                         <div class="applyButton">
@@ -141,30 +151,30 @@
                     <div data-key="3" class="settingsContent">
                         <div class="settingsContent__left">
                             <div>
-                                <input type="text" id="color0" maxlength="7">
-                                <label for="color0"> - pitch</label>
+                                <input type="text" id="colPitch" maxlength="7">
+                                <label for="colPitch"> - pitch</label>
                             </div>
                             <div>
-                                <input type="text" id="color1" maxlength="7">
-                                <label for="color1"> - net</label>
+                                <input type="text" id="colNet" maxlength="7">
+                                <label for="colNet"> - net</label>
                             </div>
                             <div>
-                                <input type="text" id="color2" maxlength="7">
-                                <label for="color2"> - lines</label>
+                                <input type="text" id="colLines" maxlength="7">
+                                <label for="colLines"> - lines</label>
                             </div>
                         </div>
                         <div class="settingsContent__right">
                             <div>
-                                <input type="text" id="color3" maxlength="7">
-                                <label for="color3"> - left paddle</label>
+                                <input type="text" id="colPadL" maxlength="7">
+                                <label for="colPadL"> - left paddle</label>
                             </div>
                             <div>
-                                <input type="text" id="color4" maxlength="7">
-                                <label for="color4"> - right paddle</label>
+                                <input type="text" id="colPadR" maxlength="7">
+                                <label for="colPadR"> - right paddle</label>
                             </div>
                             <div>
-                                <input type="text" id="color5" maxlength="7">
-                                <label for="color5"> - ball</label>
+                                <input type="text" id="colBall" maxlength="7">
+                                <label for="colBall"> - ball</label>
                             </div>
                         </div>
                         <div class="applyButton">
