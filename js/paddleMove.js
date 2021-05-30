@@ -3,29 +3,29 @@ const playerPaddleMove = e =>
     //Ruch myszki na lewej polowie pola gry umozliwia ruch paletki lewej.
     if(e.clientX - canvas.offsetLeft < canvasWidth / 2) 
     {
-        paddleLeftY = e.clientY - canvas.offsetTop - paddleLeftHeight / 2;
+        padLY = e.clientY - canvas.offsetTop - padLHeight / 2;
     }
     //... prawej ... prawej.
     else 
     {
-        paddleRightY = e.clientY - canvas.offsetTop - paddleRightHeight / 2;
+        padRY = e.clientY - canvas.offsetTop - padRHeight / 2;
     }
     
     //Jesli paletka gracza lewego wyjdzie poza pole gry na dole.
-    if(paddleLeftY + paddleLeftHeight >= canvasHeight) 
+    if(padLY + padLHeight >= canvasHeight) 
     {
-        paddleLeftY = canvasHeight - paddleLeftHeight; //Zatrzymaj paletke przy dolnej krawedzi pola gry.
+        padLY = canvasHeight - padLHeight; //Zatrzymaj paletke przy dolnej krawedzi pola gry.
     }
     //... na gorze.
-    else if(paddleLeftY <= 0) paddleLeftY = 0; //Zatrzymaj paletke przy gornej krawedzi pola gry.
+    else if(padLY <= 0) padLY = 0; //Zatrzymaj paletke przy gornej krawedzi pola gry.
 
     //Jesli paletka gracza prawego wyjdzie poza pole gry na dole.
-    if(paddleRightY + paddleRightHeight >= canvasHeight) 
+    if(padRY + padRHeight >= canvasHeight) 
     {
-        paddleRightY = canvasHeight - paddleRightHeight; //Zatrzymaj paletke przy dolnej krawedzi pola gry.
+        padRY = canvasHeight - padRHeight; //Zatrzymaj paletke przy dolnej krawedzi pola gry.
     }
     //... na gorze.
-    else if(paddleRightY <= 0) paddleRightY = 0; //Zatrzymaj paletke przy gornej krawedzi pola gry.
+    else if(padRY <= 0) padRY = 0; //Zatrzymaj paletke przy gornej krawedzi pola gry.
 }
 
 //Ruch myszki w polu gry.

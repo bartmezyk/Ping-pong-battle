@@ -14,19 +14,25 @@ const canvasHeight = canvas.height;
 
 //------------------- PALETKA ------------------------
 //----- wartosci startowe -----
-const paddleWidth = 20;
+const padWidth = 20;
 
-const paddleLeftHeightConst = 100; //Startowa wysokosc lewej paletki.
-const paddleRightHeightConst = 100; //... prawej.
+const padLHeightConst = 100; //Startowa wysokosc paletki lewej.
+const padRHeightConst = 100; //... prawej.
 
-const paddleX = 70; //O ile paletki sa odsuniete od krotszych krawedzi canvas (lewa paletka od lewej krawedzi, a prawa od prawej).
+const padX = 70; //O ile paletki sa odsuniete od krotszych krawedzi canvas (lewa paletka od lewej krawedzi, a prawa od prawej).
+
+const padLSpeedConst = 50; //Startowa wartosc o jaka przesuwa sie lewa paletka w trybie multiplayer po jednorazowym wcisnieciu klawisza.
+const padRSpeedConst = 50; //... prawa ...
 
 //----- wartosci zmienne -----
-let paddleLeftHeight = paddleLeftHeightConst; //Wysokosc lewej paletki zmienna w czasie gry.
-let paddleRightHeight = paddleRightHeightConst; //... prawej.
+let padLHeight = padLHeightConst; //Wysokosc paletki lewej.
+let padRHeight = padRHeightConst; //... prawej.
 
-let paddleLeftY = canvasHeight / 2 - paddleLeftHeight / 2; //O ile lewa paletka jest odsunieta od gornej krawedzi pola gry.
-let paddleRightY = canvasHeight / 2 - paddleRightHeight / 2; //... prawa.
+let padLY = canvasHeight / 2 - padLHeight / 2; //O ile lewa paletka jest odsunieta od gornej krawedzi pola gry.
+let padRY = canvasHeight / 2 - padRHeight / 2; //... prawa ...
+
+let padLSpeed = padLSpeedConst; //Wartosc o jaka przesuwa sie lewa paletka w trybie multiplayer po jednorazowym wcisnieciu klawisza.
+let padRSpeed = padRSpeedConst; //... prawa ...
 //-------------------------------------------
 
 
@@ -38,12 +44,12 @@ const ballXSpeedConst = 5; //Startowa predkosc pilki wzdluz osi X.
 const ballYSpeedConst = 5; //... wzdluz osi Y.
 
 //----- wartosci zmienne -----
-let ballSize = ballSizeConst; //Dlugosc boku kwadratu 'pilki' zmienna w czasie gry.
+let ballSize = ballSizeConst; //Dlugosc boku kwadratu 'pilki'.
 
 let ballX = canvasWidth/2 - ballSize/2; //Polozenie lewego gornego rogu 'pilki' wzdluz osi X (na poczatku gry pilka jest dokladnie na srodku boiska).
 let ballY = canvasHeight/2 - ballSize/2; //... wzdluz osi Y.
 
-let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X zmienna w czasie gry.
+let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X.
 let ballYSpeed = ballYSpeedConst; //... wzdluz osi Y.
 
 let ballMoveRight = true; //Pilka porusza sie w prawo (true).
@@ -56,20 +62,20 @@ const pitchColorConst = '#000000'; //Startowy kolor boiska.
 const netColorConst = '#FFFFFF'; //Startowy kolor siatki na srodku boiska (linia pionowa).
 const lineColorConst = '#FFFFFF'; //Startowy kolor linii poziomej na srodku boiska.
 
-const paddleLeftColorConst = '#FF0000'; //Startowy kolor paletki lewej.
-const paddleRightColorConst = '#0000FF'; //... prawej.
+const padLColorConst = '#FF0000'; //Startowy kolor paletki lewej.
+const padRColorConst = '#0000FF'; //... prawej.
 
 const ballColorConst = '#ff9100'; //Startowy kolor pilki.
 
 //----- wartosci zmienne -----
-let pitchColor = pitchColorConst; //Kolor boiska zmienny w czasie gry.
-let netColor = netColorConst; //Kolor siatki zmienny w czasie gry.
-let lineColor = lineColorConst; //Kolor linii poziomej zmienny w czasie gry.
+let pitchColor = pitchColorConst; //Kolor boiska.
+let netColor = netColorConst; //Kolor siatki.
+let lineColor = lineColorConst; //Kolor linii poziomej.
 
-let paddleLeftColor = paddleLeftColorConst; //Kolor paletki lewej zmienny w czasie gry.
-let paddleRightColor = paddleRightColorConst; //... prawej.
+let padLColor = padLColorConst; //Kolor paletki lewej.
+let padRColor = padRColorConst; //... prawej.
 
-let ballColor = ballColorConst; //Kolor pilki zmienny w czasie gry.
+let ballColor = ballColorConst; //Kolor pilki.
 //-------------------------------------------
 
 
@@ -94,4 +100,26 @@ const infoBounceBest = document.querySelector('.info__bounceBest');
 const chooseButtons = document.querySelectorAll('.chooseButton');
 
 const settingsContents = document.querySelectorAll('.settingsContent');
+
+//----- inputy -----
+const inpSpeedPadL = document.getElementById('speedPadL');
+const inpSpeedPadR = document.getElementById('speedPadR');
+
+const inpSpeedX = document.getElementById('speedX');
+const inpSpeedY = document.getElementById('speedY');
+const inpSpeedXIncr = document.getElementById('speedXIncr');
+const inpSpeedYIncr = document.getElementById('speedYIncr');
+const inpSpeedXMax = document.getElementById('speedXMax');
+const inpSpeedYMax = document.getElementById('speedYMax');
+
+const inpHeightPadL = document.getElementById('heightPadL');
+const inpHeightPadR = document.getElementById('heightPadR');
+const inpSizeBall = document.getElementById('sizeBall');
+
+const inpColPitch = document.getElementById('colPitch');
+const inpColNet = document.getElementById('colNet');
+const inpColLines = document.getElementById('colLines');
+const inpColPadL = document.getElementById('colPadL');
+const inpColPadR = document.getElementById('colPadR');
+const inpColBall = document.getElementById('colBall');
 //-------------------------------------------

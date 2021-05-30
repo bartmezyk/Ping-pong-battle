@@ -43,7 +43,7 @@ const settingColor = e =>
 //Wstaw wartosci odpowiednich zmiennych do inputow w menu ustawien.
 const settingInputsUpdate = () =>
 {
-    ;
+    inpSpeedPadL.value = ballXSpeedConst;
 }
 
 document.querySelector('.btnMode').addEventListener('click', settingMode)

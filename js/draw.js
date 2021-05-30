@@ -14,15 +14,15 @@ const drawPitch = () =>
 //Rysuj paletke lewa.
 const drawPaddleLeft = () => 
 {
-	ctx.fillStyle = paddleLeftColor;
-	ctx.fillRect(paddleX, paddleLeftY, paddleWidth, paddleLeftHeight);
+	ctx.fillStyle = padLColor;
+	ctx.fillRect(padX, padLY, padWidth, padLHeight);
 }
 
 //Rysuj paletke prawa.
 const drawPaddleRight = () =>
 {
-	ctx.fillStyle = paddleRightColor;
-	ctx.fillRect(canvasWidth - paddleX - paddleWidth, paddleRightY, paddleWidth, paddleRightHeight);
+	ctx.fillStyle = padRColor;
+	ctx.fillRect(canvasWidth - padX - padWidth, padRY, padWidth, padRHeight);
 }
 
 //Rysuj pilke.
