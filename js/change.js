@@ -3,23 +3,28 @@ const changeMode = e =>
 {
 	//Zmien tryb gry w zmiennej globalnej.
     mode = e.target.dataset.mode;
-	console.log(mode);
 
 	//Zmien zawartosc w prawej czesci komtentu w menu ustawien w zaleznosci od wybranego radioboxa (poprzez nadanie lub zabranie klasy).
 	if(mode == 0)
 	{
-		settContRightSin.classList.add('settingsContent__right--deactive');
-		settContRightMul.classList.add('settingsContent__right--deactive');
+		settModeRightSin.classList.add('settingsContent__right--deactive');
+		settModeRightMul.classList.add('settingsContent__right--deactive');
+
+		settModeBtn.classList.add('applyButton--hidden');
 	}
 	if(mode == 1)
 	{
-		settContRightMul.classList.add('settingsContent__right--deactive');
-		settContRightSin.classList.remove('settingsContent__right--deactive');
+		settModeRightMul.classList.add('settingsContent__right--deactive');
+		settModeRightSin.classList.remove('settingsContent__right--deactive');
+
+		settModeBtn.classList.add('applyButton--hidden');
 	}
 	else if(mode == 2)
 	{
-		settContRightSin.classList.add('settingsContent__right--deactive');
-		settContRightMul.classList.remove('settingsContent__right--deactive');
+		settModeRightSin.classList.add('settingsContent__right--deactive');
+		settModeRightMul.classList.remove('settingsContent__right--deactive');
+
+		settModeBtn.classList.remove('applyButton--hidden');
 	}
 }
 
@@ -28,6 +33,46 @@ const changeModeCom = e =>
 {
 	//Zmien poziom gracza komputerowego w zmiennej globalnej.
 	modeCom = e.target.dataset.modecom;
+}
+
+const changePaddleSpeed = () =>
+{
+	//Jesli przycik 'APPLY' w menu ustawien w opcji 'MODE' nie jest ukryty.
+	if(!settModeBtn.classList.contains('applyButton--hidden'))
+	{
+		const inpPadL = parseFloat(inpSpeedPadL.value);
+		const inpPadR = parseFloat(inpSpeedPadR.value);
+
+		//Paletka lewa.
+		if(!isNaN(inpPadL) && (inpPadL != padLSpeed))
+		{
+			//Jesli wprowadzona wartosc miesci sie w przedziale.
+			if(inpPadL >= 1 && inpPadL <= canvasHeight) padLSpeed = inpPadL;
+			else
+			{
+				//Jesli jest mniejsza niz dolna granica przedzialu.
+				if(inpPadL < 1) padLSpeed = 1;
+				//Jesli wieksza niz gorna granica.
+				else if(inpPadL > canvasHeight) padLSpeed = canvasHeight;
+
+				//Odswiez zawartosc inputa o prawidlowa wartosc (dolna lub gorna granice przedzialu).
+				inpSpeedPadL.value = padLSpeed;
+			}
+		}
+
+		//Paletka prawa.
+		if(!isNaN(inpPadR) && (inpPadR != padRSpeed))
+		{
+			if(inpPadR >= 1 && inpPadR <= canvasHeight) padRSpeed = inpPadR;
+			else
+			{
+				if(inpPadR < 1) padRSpeed = 1;
+				else if(inpPadR > canvasHeight) padRSpeed = canvasHeight;
+
+				inpSpeedPadR.value = padRSpeed;
+			}
+		}
+	}
 }
 
 const changeBallSpeed = () =>

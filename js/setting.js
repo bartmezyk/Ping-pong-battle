@@ -25,7 +25,8 @@ const settingMain = e =>
 //Wywolaj odpowiednie funkcje po kliknieciu przycisku 'APPLY' w menu ustawien.
 const settingApply = () =>
 {
-    if(settingChoose == 1) changeBallSpeed();
+    if(settingChoose == 0) changePaddleSpeed();
+    else if(settingChoose == 1) changeBallSpeed();
     else if(settingChoose == 2) changeSize();
     else console.error(`Wrong value in "settingChoose" variable: ${settingChoose}.`);
 }

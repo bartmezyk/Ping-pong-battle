@@ -76,79 +76,78 @@
                         </div>
                         <div class="settingsContent__right settingsContent__right--deactive">
                             <div>
-                                <input type="number" id="speedPadL" min="1" step="1">
+                                <input type="number" id="speedPadL" class="settingsContent__input" min="1" step="1">
                                 <label for="speedPadL"> - left paddle speed</label>
                             </div>
                             <div>
-                                <input type="number" id="speedPadR" min="1" step="1">
+                                <input type="number" id="speedPadR" class="settingsContent__input" min="1" step="1">
                                 <label for="speedPadR"> - right paddle speed</label>
                             </div>
+                        </div>
+                        <div class="applyButton applyButton--hidden">
+                            <div class="applyButton__text">apply</div>
                         </div>
                     </div>
                     <div data-key="1" class="settingsContent">
                         <div class="settingsContent__left">
                             <div>Actual speed: </div>
-                            <div><input type="number" id="speedX" step="0.1"><label for="speedX"> - X</label></div>
-                            <div><input type="number" id="speedY" step="0.1"><label for="speedY"> - Y</label></div>
+                            <div><input type="number" id="speedX" class="settingsContent__input" step="0.1"><label for="speedX"> - X</label></div>
+                            <div><input type="number" id="speedY" class="settingsContent__input" step="0.1"><label for="speedY"> - Y</label></div>
                         </div>
                         <div class="settingsContent__right">
                             <div>Bounce increment: </div>
-                            <div><input type="number" id="speedXIncr" step="0.01"><label for="speedXIncr"> - X</label></div>
-                            <div><input type="number" id="speedYIncr" step="0.01"><label for="speedYIncr"> - Y</label></div>
+                            <div><input type="number" id="speedXIncr" class="settingsContent__input" step="0.01"><label for="speedXIncr"> - X</label></div>
+                            <div><input type="number" id="speedYIncr" class="settingsContent__input" step="0.01"><label for="speedYIncr"> - Y</label></div>
                         </div>
                         <div class="applyButton">
-                            <div class="applyButton__text">
-                                apply
-                            </div>
+                            <div class="applyButton__text">apply</div>
                         </div>
                     </div>
                     <div data-key="2" class="settingsContent">
                         <div class="settingsContent__left">
                             <div>
-                                <input type="number" id="heightPadL" step="1" min="20" max="556">
+                                <input type="number" id="heightPadL" class="settingsContent__input" step="1" min="20" max="556">
                                 <label for="heightPadL"> - left paddle height</label>
                             </div>
                             <div>
-                                <input type="number" id="heightPadR" step="1" min="20" max="556">
+                                <input type="number" id="heightPadR" class="settingsContent__input" step="1" min="20" max="556">
                                 <label for="heightPadR"> - right paddle height</label>
                             </div>
                             <div>
-                                <input type="number" id="sizeBall" step="1" min="10" max="556">
+                                <input type="number" id="sizeBall" class="settingsContent__input" step="1" min="10" max="556">
                                 <label for="sizeBall"> - ball size</label>
                             </div>
                         </div>
                         <div class="applyButton">
-                            <div class="applyButton__text">
-                                apply
-                            </div>
+                            <div class="applyButton__text">apply</div>
                         </div>
                     </div>
                     <div data-key="3" class="settingsContent">
                         <div class="settingsContent__left">
                             <div>
-                                <input type="text" id="colorPitch" class="inpColor" maxlength="7">
+                                <input type="text" id="colorPitch" class="inpColor settingsContent__input" maxlength="7">
                                 <label for="colorPitch"> - pitch</label>
                             </div>
                             <div>
-                                <input type="text" id="colorNet" class="inpColor" maxlength="7">
+                                <input type="text" id="colorNet" class="inpColor settingsContent__input" maxlength="7">
                                 <label for="colorNet"> - net</label>
                             </div>
                             <div>
-                                <input type="text" id="colorLines" class="inpColor" maxlength="7">
+                                <input type="text" id="colorLines" class="inpColor settingsContent__input" maxlength="7">
                                 <label for="colorLines"> - lines</label>
                             </div>
                         </div>
                         <div class="settingsContent__right">
                             <div>
-                                <input type="text" id="colorPadL" class="inpColor" maxlength="7">
+                                <input type="text" id="colorPadL" class="inpColor settingsContent__input" maxlength="7">
                                 <label for="colorPadL"> - left paddle</label>
                             </div>
                             <div>
-                                <input type="text" id="colorPadR" class="inpColor" maxlength="7">
+                                <input type="text" id="colorPadR" class="inpColor settingsContent__input" maxlength="7">
                                 <label for="colorPadR"> - right paddle</label>
                             </div>
                             <div>
-                                <input type="text" id="colorBall" class="inpColor" maxlength="7">
+                                <input type="text" id="colorBall" class="inpColor settingsContent__input" maxlength="7">
                                 <label for="colorBall"> - ball</label>
                             </div>
                         </div>

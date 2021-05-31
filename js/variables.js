@@ -134,8 +134,9 @@ const infoSpeedBest  = document.querySelector('.info__speedBest');
 const infoBounce     = document.querySelector('.info__bounce');
 const infoBounceBest = document.querySelector('.info__bounceBest');
 
-const settContRightSin = document.querySelector('.settings__area > div.settingsContent[data-key="0"] > .settingsContent__right:nth-last-child(2)');
-const settContRightMul = document.querySelector('.settings__area > div.settingsContent[data-key="0"] > .settingsContent__right:nth-last-child(1)');
+const settModeRightSin = document.querySelector('.settings__area > div.settingsContent[data-key="0"] > .settingsContent__right:nth-last-child(3)');
+const settModeRightMul = document.querySelector('.settings__area > div.settingsContent[data-key="0"] > .settingsContent__right:nth-last-child(2)');
+const settModeBtn = document.querySelector('.settings__area > div.settingsContent[data-key="0"] > .applyButton:nth-last-child(1)');
 
 const chooseButtons = document.querySelectorAll('.chooseButton');
 

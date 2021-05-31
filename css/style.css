@@ -178,14 +178,18 @@ body {
   display: none;
 }
 
+.settingsContent__input {
+  width: 75px;
+}
+
 .applyButton {
   -ms-flex-preferred-size: 15%;
       flex-basis: 15%;
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
   background-color: #ff9100;
   border-left: 1px solid white;
   text-transform: uppercase;
