@@ -31,12 +31,13 @@ const changeSize = () =>
 
 			//Odswiez zawartosc inputa o prawidlowa wartosc (dolna lub gorna granice przedzialu).
 			inpHeightPadL.value = padLHeight;
-
-			//Aby pilka po modyfikacji wielkosci paletek znajdowala sie na srodku pola gry (aby ktos nie zechcial zmodyfikowac wielkosc (a wiec i polozenie) paletki w miejscu, gdzie akurat polozona jest pilka).
-			changeBallPositionToCenter();
 		}
 
-		padLY = 0; //Aby paletka po modyfikacji wielkosci przylegala do gornej krawedzi canvas (aby ktos nie zechcial wydluzac paletki ktora wystawalaby pod dolna krawedz canvas).
+		//Aby pilka po modyfikacji wielkosci paletek znajdowala sie na srodku pola gry (aby ktos nie zechcial zmodyfikowac wielkosc (a wiec i polozenie) paletki w miejscu, gdzie akurat polozona jest pilka).
+		changeBallPositionToCenter();
+
+		//Aby paletka po modyfikacji wielkosci nie wystawala pod dolna krawedz pola gry.
+		if(padLY + padLHeight > canvasHeight) padLY = canvasHeight - padLHeight;
 	}
 
 	//Paletka prawa.
@@ -49,27 +50,28 @@ const changeSize = () =>
 			else if(inpPadR > canvasHeight) padRHeight = canvasHeight;
 
 			inpHeightPadR.value = padRHeight;
-
-			changeBallPositionToCenter();
 		}
 
-		padRY = 0;
+		changeBallPositionToCenter();
+
+		if(padRY + padRHeight > canvasHeight) padRY = canvasHeight - padRHeight;
 	}
 
 	//Pilka.
 	if(!isNaN(inpBall) && (inpBall != ballSize))
 	{
+		console.log('pilka');
 		if(inpBall >= 10 && inpBall <= canvasHeight) ballSize = inpBall;
 		else
 		{
 			if(inpBall < 10) ballSize = 10;
 			else if(inpBall > canvasHeight) ballSize = canvasHeight;
 
-			inpBall.value = ballSize;
-
-			//Aby pilka po modyfikacji jej wielkosci znajdowala sie na srodku pola gry (aby ktos nie zechcial zwiekszac pilki, ktora znajdowalaby sie przy krawedzi pola gry, co mogloby spowodowac ze czesc pilki zaczelaby wystawac poza pole gry)
-			changeBallPositionToCenter(); 
+			inpSizeBall.value = ballSize;
 		}
+
+		//Aby pilka po modyfikacji jej wielkosci znajdowala sie na srodku pola gry (aby ktos nie zechcial zwiekszac pilki, ktora znajdowalaby sie przy krawedzi pola gry, co mogloby spowodowac ze czesc pilki zaczelaby wystawac poza pole gry)
+		changeBallPositionToCenter(); 
 	}
 
 	//Aktualizuj wyglad elementow w polu gry.
