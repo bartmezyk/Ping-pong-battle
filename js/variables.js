@@ -103,6 +103,8 @@ let bounceBest = 0; //Najwieksza ilosc odbic pilki od paletek podczas pojedyncze
 
 
 //------------------- INNE ------------------------
+let settingChoose = 0; //0 - mode, 1 - ball speed, 2 - size, 3 - color
+
 const infoScore      = document.querySelector('.info__score');
 const infoSpeed      = document.querySelector('.info__speed');
 const infoSpeedBest  = document.querySelector('.info__speedBest');
@@ -113,7 +115,7 @@ const chooseButtons = document.querySelectorAll('.chooseButton');
 
 const settingsContents = document.querySelectorAll('.settingsContent');
 
-const scoreResetButton = document.querySelector
+const scoreResetButton = document.querySelector('.score__reset');
 
 //----- inputy -----
 const inpSpeedPadL = document.getElementById('speedPadL');

@@ -26,8 +26,9 @@ const showSpeed = () =>
 	if (parseFloat(speed) > parseFloat(speedBest))
 	{
 		speedBest = speed;
-		infoSpeedBest.textContent = `Best ball speed: ${speedBest}`; //Maksymalna predkosci pilki podczas pojedynczego zaladowania strony.
 	}
+
+	infoSpeedBest.textContent = `Best ball speed: ${speedBest}`; //Maksymalna predkosci pilki podczas pojedynczego zaladowania strony.
 }
 
 showScore();
