@@ -183,6 +183,11 @@ body {
   width: 70px;
 }
 
+.settingsContent__buttonSpace {
+  -ms-flex-preferred-size: 16%;
+      flex-basis: 16%;
+}
+
 .applyButton {
   -ms-flex-preferred-size: 16%;
       flex-basis: 16%;
@@ -207,6 +212,7 @@ body {
 
 .applyButton--hidden {
   opacity: 0;
+  cursor: default;
 }
 
 .applyButton:hover {

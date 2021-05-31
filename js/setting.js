@@ -22,13 +22,13 @@ const settingMain = e =>
     });
 }
 
-//const settingApply = () =>
-//{
-//    if(settingChoose == 1) changeBallSpeed();
-//    else if(settingChoose == 2) changeSize();
-//    else if(settingChoose == 3) changeColor();
-//    else throw error('ddd');
-//}
+const settingApply = () =>
+{
+    if(settingChoose == 1) changeBallSpeed();
+    else if(settingChoose == 2) changeSize();
+    else if(settingChoose == 3) changeColor();
+    else throw new Error(`Wrong value in "settingChoose" variable: ${settingChoose}`);
+}
 
 //Wstaw wartosci odpowiednich zmiennych do inputow w menu ustawien.
 const settingInputsUpdate = () =>
@@ -60,4 +60,9 @@ settingInputsUpdate();
 chooseButtons.forEach(button =>
 {
     button.addEventListener('click', settingMain);
+});
+
+applyButtons.forEach(button =>
+{
+    button.addEventListener('click', settingApply);
 });
