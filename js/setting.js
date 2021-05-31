@@ -27,7 +27,6 @@ const settingApply = () =>
 {
     if(settingChoose == 1) changeBallSpeed();
     else if(settingChoose == 2) changeSize();
-    else if(settingChoose == 3) changeColor();
     else console.error(`Wrong value in "settingChoose" variable: ${settingChoose}.`);
 }
 

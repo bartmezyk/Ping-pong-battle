@@ -16,3 +16,14 @@ const checkColor = color =>
     console.error(`Wrong length or first sign different than '#' in some input/s.`);
 	return false;
 }
+
+//Sprawdz, czy podana liczba miesci sie w podanym zakresie (jesli tak - zwroc 'true', jesli nie - zwroc dolna badz gorna granice przedzialu)
+const checkNumber = (number, min, max) =>
+{
+	if(!isNaN(number) && !isNaN(min) && !isNaN(max) && (min < max))
+	{
+		if(number < min) return min;
+		else if(number > max) return max;
+		else return true;
+	}
+}

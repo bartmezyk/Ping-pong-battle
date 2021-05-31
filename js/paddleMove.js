@@ -3,6 +3,7 @@ const playerPaddleMove = e =>
     //Ruch myszki na lewej polowie pola gry umozliwia ruch paletki lewej.
     if(e.clientX - canvas.offsetLeft < canvasWidth / 2) 
     {
+        console.log('ddd');
         padLY = e.clientY - canvas.offsetTop - padLHeight / 2;
     }
     //... prawej ... prawej.
