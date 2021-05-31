@@ -1,3 +1,35 @@
+//Zmien tryb gry.
+const changeMode = e =>
+{
+	//Zmien tryb gry w zmiennej globalnej.
+    mode = e.target.dataset.mode;
+	console.log(mode);
+
+	//Zmien zawartosc w prawej czesci komtentu w menu ustawien w zaleznosci od wybranego radioboxa (poprzez nadanie lub zabranie klasy).
+	if(mode == 0)
+	{
+		settContRightSin.classList.add('settingsContent__right--deactive');
+		settContRightMul.classList.add('settingsContent__right--deactive');
+	}
+	if(mode == 1)
+	{
+		settContRightMul.classList.add('settingsContent__right--deactive');
+		settContRightSin.classList.remove('settingsContent__right--deactive');
+	}
+	else if(mode == 2)
+	{
+		settContRightSin.classList.add('settingsContent__right--deactive');
+		settContRightMul.classList.remove('settingsContent__right--deactive');
+	}
+}
+
+//Zmien poziom gracza komputerowego.
+const changeModeCom = e =>
+{
+	//Zmien poziom gracza komputerowego w zmiennej globalnej.
+	modeCom = e.target.dataset.modecom;
+}
+
 const changeBallSpeed = () =>
 {
 
@@ -108,4 +140,14 @@ const changeColor = e =>
 inpColors.forEach(color =>
 {
 	color.addEventListener('input', changeColor);
+});
+
+radioModes.forEach(mode =>
+{
+    mode.addEventListener('click', changeMode);
+});
+
+radioModesCom.forEach(mode =>
+{
+	mode.addEventListener('click', changeModeCom);
 });

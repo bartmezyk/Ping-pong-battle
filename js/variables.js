@@ -69,11 +69,11 @@ let ballYSpeedMax = ballYSpeedMaxConst; //... osi Y.
 
 
 //--------------------- OPCJE WYBIERANE ----------------------
-let mode = 1; /*Jesli mode = 0 - tryb single player bez komputera (wybierany radioboxem).
+let mode = 0; /*Jesli mode = 0 - tryb single player bez komputera (wybierany radioboxem).
 					  mode = 1 - ... z komputerem ("comMode" ponizej).
 					  mode = 2 - tryb multiplayer. */
 
-let comMode = 0; /* Jesli comMode = 0 - tryb easy komputera (wybierany radioboxem).
+let modeCom = 0; /* Jesli comMode = 0 - tryb easy komputera (wybierany radioboxem).
 						  comMode = 1 - ... medium ...
 						  comMode = 2 - ... hard ... */
 
@@ -132,6 +132,9 @@ const infoSpeedBest  = document.querySelector('.info__speedBest');
 const infoBounce     = document.querySelector('.info__bounce');
 const infoBounceBest = document.querySelector('.info__bounceBest');
 
+const settContRightSin = document.querySelector('.settings__area > div.settingsContent[data-key="0"] > .settingsContent__right:nth-last-child(2)');
+const settContRightMul = document.querySelector('.settings__area > div.settingsContent[data-key="0"] > .settingsContent__right:nth-last-child(1)');
+
 const chooseButtons = document.querySelectorAll('.chooseButton');
 
 const settingsContents = document.querySelectorAll('.settingsContent');
@@ -139,6 +142,11 @@ const settingsContents = document.querySelectorAll('.settingsContent');
 const scoreResetButton = document.querySelector('.score__reset');
 
 const applyButtons = document.querySelectorAll('.applyButton');
+
+//----- radioboxy -----
+const radioModes = document.querySelectorAll('.mode');
+
+const radioModesCom = document.querySelectorAll('.modeCom');
 
 //----- inputy -----
 const inpSpeedPadL = document.getElementById('speedPadL');
