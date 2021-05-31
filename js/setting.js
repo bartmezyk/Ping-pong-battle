@@ -22,12 +22,13 @@ const settingMain = e =>
     });
 }
 
+//Wywolaj odpowiednie funkcje po kliknieciu przycisku 'APPLY' w menu ustawien.
 const settingApply = () =>
 {
     if(settingChoose == 1) changeBallSpeed();
     else if(settingChoose == 2) changeSize();
     else if(settingChoose == 3) changeColor();
-    else throw new Error(`Wrong value in "settingChoose" variable: ${settingChoose}`);
+    else console.error(`Wrong value in "settingChoose" variable: ${settingChoose}.`);
 }
 
 //Wstaw wartosci odpowiednich zmiennych do inputow w menu ustawien.

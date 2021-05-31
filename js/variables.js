@@ -71,11 +71,11 @@ let ballYSpeedMax = ballYSpeedMaxConst; //... osi Y.
 //--------------------- KOLORY ----------------------
 //----- wartosci startowe -----
 const pitchColorConst = '#000000'; //Startowy kolor boiska.
-const netColorConst = '#FFFFFF'; //Startowy kolor siatki na srodku boiska (linia pionowa).
-const lineColorConst = '#FFFFFF'; //Startowy kolor linii poziomej na srodku boiska.
+const netColorConst = '#ffffff'; //Startowy kolor siatki na srodku boiska (linia pionowa).
+const lineColorConst = '#ffffff'; //Startowy kolor linii poziomej na srodku boiska.
 
-const padLColorConst = '#FF0000'; //Startowy kolor paletki lewej.
-const padRColorConst = '#0000FF'; //... prawej.
+const padLColorConst = '#ff0000'; //Startowy kolor paletki lewej.
+const padRColorConst = '#0000ff'; //... prawej.
 
 const ballColorConst = '#ff9100'; //Startowy kolor pilki.
 
@@ -133,6 +133,8 @@ const inpSpeedYMax = document.getElementById('speedYMax');
 const inpHeightPadL = document.getElementById('heightPadL');
 const inpHeightPadR = document.getElementById('heightPadR');
 const inpSizeBall = document.getElementById('sizeBall');
+
+const inpColors = document.querySelectorAll('.inpColor');
 
 const inpColorPitch = document.getElementById('colorPitch');
 const inpColorNet = document.getElementById('colorNet');
