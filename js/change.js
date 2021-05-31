@@ -88,7 +88,7 @@ const changeColor = e =>
 	const inpValue = e.target.value; 
 	
 	//Jesli nazwa koloru wpisana w inpucie koloru jest poprawna (np. #f0565a) - przypisz odpowiedniemu elementowi wpisany kolor.
-	if(checkColor(inputValue))
+	if(checkColor(inpValue))
 	{
 		     if(inpId == 'colorPitch') pitchColor = inpValue;
 		else if(inpId == 'colorNet')   netColor   = inpValue;

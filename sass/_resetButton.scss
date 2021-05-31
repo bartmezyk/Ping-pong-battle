@@ -1,7 +1,7 @@
 .resetButton
 {
     height: 38px;
-    background-color: #252525;
+    background-color: $reset-gray-color;
 	transition: .2s;
     cursor: pointer;
     text-transform: uppercase;

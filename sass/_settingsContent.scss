@@ -10,28 +10,18 @@
 
     &__left
     {
-        flex-grow: 1;
+        flex-basis: 50%;
         padding: 4px 0 0 4px;
     }
 
     &__right
     {
-        flex-basis: 42%;
+        flex-grow: 1;
         padding: 4px 0 0 4px;
 
         &--deactive
         {
             display: none;
         }
-    }
-
-    &__numInp
-    {
-        width: 70px;
-    }
-
-    &__buttonSpace
-    {
-        flex-basis: 16%;
     }
 }

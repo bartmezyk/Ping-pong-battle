@@ -1,10 +1,10 @@
 .chooseButton
 {
-    flex-grow: 1;
+    flex-basis: 25%;
     height: 34px;
     line-height: 34px;
     text-transform: uppercase;
-    background-color: rgb(144, 144, 144);
+    background-color: $button-gray-color;
     border-right: 1px solid #fff;
     cursor: pointer;
     transition: .2s;
@@ -16,16 +16,16 @@
 
     &:hover
     {
-        background-color: rgb(112, 112, 112);
+        background-color: darken($button-gray-color, 10%)
     }
 
     &--active
     {
-        background-color: $main-color;
+        background-color: $orange-color;
 
         &:hover
         {
-            background-color: $main-color;
+            background-color: $orange-color;
         }
     }
 }

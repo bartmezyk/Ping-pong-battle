@@ -40,8 +40,6 @@ const settingInputsUpdate = () =>
     inpSpeedY.value = ballYSpeed;
     inpSpeedXIncr.value = ballXSpeedIncr;
     inpSpeedYIncr.value = ballYSpeedIncr;
-    inpSpeedXMax.value = ballXSpeedMax;
-    inpSpeedYMax.value = ballYSpeedMax;
 
     inpHeightPadL.value = padLHeight;
     inpHeightPadR.value = padRHeight;
