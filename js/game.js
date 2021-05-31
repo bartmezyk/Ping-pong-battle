@@ -1,9 +1,11 @@
 //Odswiez pole gry i znajdujace sie na nim elementy.
-const game = () =>
+const gameRefresh = () =>
 {
     drawPitch();
     ballMove();
     drawPaddleLeft();
+	//Jesli tryb gry z komputerem to wlacz automatyczne nadawanie wspolrzednych paletce prawej.
+	if(mode == 1) computerPaddleMove();
     drawPaddleRight();
 }
 
@@ -27,4 +29,4 @@ const gameOver = defeatedPaddle =>
 }
 
 //60 razy na sekunde pole gry odswiezane.
-setInterval(game, 1000/60);
+setInterval(gameRefresh, 1000/60);

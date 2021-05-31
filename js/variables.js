@@ -68,6 +68,22 @@ let ballYSpeedMax = ballYSpeedMaxConst; //... osi Y.
 //-------------------------------------------
 
 
+//--------------------- OPCJE WYBIERANE ----------------------
+let mode = 1; /*Jesli mode = 0 - tryb single player bez komputera (wybierany radioboxem).
+					  mode = 1 - ... z komputerem ("comMode" ponizej).
+					  mode = 2 - tryb multiplayer. */
+
+let comMode = 0; /* Jesli comMode = 0 - tryb easy komputera (wybierany radioboxem).
+						  comMode = 1 - ... medium ...
+						  comMode = 2 - ... hard ... */
+
+let settingChoose = 0; /* Jesli settingChoose = 0 - w menu ustawien wybrana opcja MODE.
+								 settingChoose = 1 - ... BALL SPEED.
+								 settingChoose = 2 - ... SIZE.
+								 settingChoose = 3 - ... COLOR. */
+//-------------------------------------------
+
+
 //--------------------- KOLORY ----------------------
 //----- wartosci startowe -----
 const pitchColorConst = '#000000'; //Startowy kolor boiska.
@@ -91,6 +107,13 @@ let ballColor = ballColorConst; //Kolor pilki.
 //-------------------------------------------
 
 
+//-------------------GRACZ KOMPUTEROWY------------------------
+const comEasyLev = 5; //Poziom trudnosci komputera latwy.
+const comMediumLev = 10; //... sredni.
+const comHardLev = 15; //... trudny.
+//-------------------------------------------
+
+
 //------------------- WYNIKI ------------------------
 let leftScore = 0; //Wynik paletki lewej (ile razy wygrala).
 let rightScore = 0; //... prawej ...
@@ -103,8 +126,6 @@ let bounceBest = 0; //Najwieksza ilosc odbic pilki od paletek podczas pojedyncze
 
 
 //------------------- INNE ------------------------
-let settingChoose = 0; //0 - mode, 1 - ball speed, 2 - size, 3 - color
-
 const infoScore      = document.querySelector('.info__score');
 const infoSpeed      = document.querySelector('.info__speed');
 const infoSpeedBest  = document.querySelector('.info__speedBest');
