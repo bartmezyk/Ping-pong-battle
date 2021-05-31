@@ -3,6 +3,13 @@ const changeBallSpeed = () =>
 
 }
 
+//Ustawi pilke na srodku boiska.
+const changeBallPositionToCenter = () =>
+{
+	ballX = canvasWidth / 2 - ballSize / 2; 
+	ballY = canvasHeight / 2 - ballSize / 2;
+}
+
 //Zmien wielkosc paletek i pilki.
 const changeSize = () =>
 {
@@ -11,40 +18,60 @@ const changeSize = () =>
 	const inpBall = parseFloat(inpSizeBall.value);
 
 	//Paletka lewa.
-	if(checkNumber(inpPadL, 20, canvasHeight))
-	{  
-		if(padLHeight != inpPadL) //Aby zmiana wielkosci paletki nastepowala tylko wtedy, gdy nowa wartosc rozni sie od aktualnie ustawionej.
+	if(!isNaN(inpPadL) && (inpPadL != padLHeight))
+	{
+		//Jesli wprowadzona wartosc miesci sie w przedziale.
+		if(inpPadL >= 20 && inpPadL <= canvasHeight) padLHeight = inpPadL;
+		else
 		{
-			padLHeight = inpPadL;
-			
-			padLY = 0; //Aby paletka po modyfikacji wielkosci przylegala do gornej krawedzi canvas (aby ktos nie zechcial wydluzac paletki ktora wystawalaby pod dolna krawedz canvas).
+			//Jesli jest mniejsza niz dolna granica przedzialu.
+			if(inpPadL < 20) padLHeight = 20;
+			//Jesli wieksza niz gorna granica.
+			else if(inpPadL > canvasHeight) padLHeight = canvasHeight;
+
+			//Odswiez zawartosc inputa o prawidlowa wartosc (dolna lub gorna granice przedzialu).
+			inpHeightPadL.value = padLHeight;
+
+			//Aby pilka po modyfikacji wielkosci paletek znajdowala sie na srodku pola gry (aby ktos nie zechcial zmodyfikowac wielkosc (a wiec i polozenie) paletki w miejscu, gdzie akurat polozona jest pilka).
+			changeBallPositionToCenter();
 		}
+
+		padLY = 0; //Aby paletka po modyfikacji wielkosci przylegala do gornej krawedzi canvas (aby ktos nie zechcial wydluzac paletki ktora wystawalaby pod dolna krawedz canvas).
 	}
 
 	//Paletka prawa.
-	if(checkNumber(inpPadR, 20, canvasHeight))
-	{  
-		if(padRHeight != inpPadR)
+	if(!isNaN(inpPadR) && (inpPadR != padRHeight))
+	{
+		if(inpPadR >= 20 && inpPadR <= canvasHeight) padRHeight = inpPadR;
+		else
 		{
-			padRHeight = inpPadR;
-			
-			padRY = 0;
+			if(inpPadR < 20) padRHeight = 20;
+			else if(inpPadR > canvasHeight) padRHeight = canvasHeight;
+
+			inpHeightPadR.value = padRHeight;
+
+			changeBallPositionToCenter();
 		}
+
+		padRY = 0;
 	}
 
 	//Pilka.
-	if(checkNumber(inpBall, 10, canvasHeight))
-	{  
-		if(inpBall != ballSize)
+	if(!isNaN(inpBall) && (inpBall != ballSize))
+	{
+		if(inpBall >= 10 && inpBall <= canvasHeight) ballSize = inpBall;
+		else
 		{
-			ballSize = inpBall;
-			
-			//Aby pilka po modyfikacji wielkosci znajdowala sie na srodku pola gry (aby ktos nie zechcial zwiekszac pilki, ktora znajdowalaby sie przy krawedzi pola gry, co mogloby spowodowac ze czesc pilki wystawalaby poza pole gry)
-			ballX = canvasWidth / 2 - ballSize / 2; 
-			ballY = canvasHeight / 2 - ballSize / 2;
+			if(inpBall < 10) ballSize = 10;
+			else if(inpBall > canvasHeight) ballSize = canvasHeight;
+
+			inpBall.value = ballSize;
+
+			//Aby pilka po modyfikacji jej wielkosci znajdowala sie na srodku pola gry (aby ktos nie zechcial zwiekszac pilki, ktora znajdowalaby sie przy krawedzi pola gry, co mogloby spowodowac ze czesc pilki zaczelaby wystawac poza pole gry)
+			changeBallPositionToCenter(); 
 		}
 	}
-	
+
 	//Aktualizuj wyglad elementow w polu gry.
 	drawPitch();
 	drawPaddleLeft();
