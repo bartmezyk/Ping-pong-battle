@@ -29,3 +29,7 @@ const showSpeed = () =>
 		infoSpeedBest.textContent = `Best ball speed: ${speedBest}`; //Maksymalna predkosci pilki podczas pojedynczego zaladowania strony.
 	}
 }
+
+showScore();
+showBounce();
+showSpeed();

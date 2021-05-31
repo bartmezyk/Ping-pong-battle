@@ -19,6 +19,11 @@ const gameOver = defeatedPaddle =>
 	
 	ballXSpeed = -ballXSpeed; //Aby pilka poruszala sie w kierunku gracza, ktory wygral poprzednia rozgrywke.
 	ballMoveRight = !ballMoveRight;
+
+	showScore();
+
+	bounceCounter = 0;
+	showBounce();
 }
 
 //60 razy na sekunde pole gry odswiezane.

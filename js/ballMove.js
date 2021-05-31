@@ -33,6 +33,9 @@ const ballMove = () =>
 
 			//+++++Podszybszenie pilki+++++
 
+			bounceCounter++;
+			showBounce();
+
 			ballMoveRight = true;
 		}
 	}
@@ -44,6 +47,9 @@ const ballMove = () =>
 			ballXSpeed = -ballXSpeed;
 
 			//+++++Podszybszenie pilki+++++
+
+			bounceCounter++;
+			showBounce();
 
 			ballMoveRight = false;
 		}

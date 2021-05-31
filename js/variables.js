@@ -113,6 +113,8 @@ const chooseButtons = document.querySelectorAll('.chooseButton');
 
 const settingsContents = document.querySelectorAll('.settingsContent');
 
+const scoreResetButton = document.querySelector
+
 //----- inputy -----
 const inpSpeedPadL = document.getElementById('speedPadL');
 const inpSpeedPadR = document.getElementById('speedPadR');
