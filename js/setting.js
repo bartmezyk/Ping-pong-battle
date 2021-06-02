@@ -20,6 +20,9 @@ const settingMain = e =>
         //Nadanie zawartosci divowi o atrybucie 'key' takim samym, jak atrybutu 'key' kliknietego przycisku (poprzez nadanie klasy).
         if(index == settingChoose) content.classList.add('settingsContent--active');
     });
+
+    //Aktualizuj inputy poprzez wstawienie do nich wartosci odpowiednich zmiennych.
+    settingInputsUpdate();
 }
 
 //Wywolaj odpowiednie funkcje po kliknieciu przycisku 'APPLY' w menu ustawien.
@@ -37,8 +40,8 @@ const settingInputsUpdate = () =>
     inpSpeedPadL.value = padLSpeed;
     inpSpeedPadR.value = padRSpeed;
 
-    inpSpeedX.value = ballXSpeed;
-    inpSpeedY.value = ballYSpeed;
+    inpSpeedX.value = ballXSpeedSet;
+    inpSpeedY.value = ballYSpeedSet;
     inpSpeedXIncr.value = ballXSpeedIncr;
     inpSpeedYIncr.value = ballYSpeedIncr;
 

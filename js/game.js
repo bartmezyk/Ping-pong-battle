@@ -1,12 +1,15 @@
 //Odswiez pole gry i znajdujace sie na nim elementy.
 const gameRefresh = () =>
 {
-    drawPitch();
-    ballMove();
-    drawPaddleLeft();
-	//Jesli tryb gry z komputerem to wlacz automatyczne nadawanie wspolrzednych paletce prawej.
-	if(mode == 1) computerPaddleMove();
-    drawPaddleRight();
+	if(!pauseGame)
+	{
+		drawPitch();
+		ballMove();
+		drawPaddleLeft();
+		//Jesli tryb gry z komputerem to wlacz automatyczne nadawanie wspolrzednych paletce prawej.
+		if(mode == 1) computerPaddleMove();
+		drawPaddleRight();
+	}
 }
 
 //Wykonaj czynnosci po przegranej ktorejs z paletek.
@@ -21,6 +24,15 @@ const gameOver = defeatedPaddle =>
 	
 	ballXSpeed = -ballXSpeed; //Aby pilka poruszala sie w kierunku gracza, ktory wygral poprzednia rozgrywke.
 	ballMoveRight = !ballMoveRight;
+
+	if(ballXSpeed < 0) ballXSpeed = -ballXSpeedSet;
+	else ballXSpeed = ballXSpeedSet;
+
+	if(ballXSpeed < 0) ballMoveRight = false;
+	else ballMoveRight = true;
+
+	if(ballYSpeed < 0) ballYSpeed = -ballYSpeedSet;
+	else ballYSpeed = ballYSpeedSet;
 
 	showScore();
 

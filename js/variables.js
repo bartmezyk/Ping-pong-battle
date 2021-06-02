@@ -46,8 +46,8 @@ const ballYSpeedConst = 5; //... wzdluz osi Y.
 const ballXSpeedIncrConst = .1; //Startowa wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
 const ballYSpeedIncrConst = .1; //... osi Y.
 
-const ballXSpeedMaxConst = 10; //Startowa ustawialna maksymalna wartosc predkosci poruszania sie pilki wzdluz osi X.
-const ballYSpeedMaxConst = 10; //... osi Y.
+const ballXSpeedMax = 40; //Maksymalna nieprzekraczalna wartosc predkosci poruszania sie pilki wzdluz osi X.
+const ballYSpeedMax = 40; //... osi Y.
 
 //----- wartosci zmienne -----
 let ballSize = ballSizeConst; //Dlugosc boku kwadratu 'pilki'.
@@ -60,11 +60,11 @@ let ballMoveRight = true; //Pilka porusza sie w prawo (true).
 let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X.
 let ballYSpeed = ballYSpeedConst; //... wzdluz osi Y.
 
+let ballXSpeedSet = ballXSpeedConst; //Predkosc pilki wzdluz osi X po wpisaniu przez gracza.
+let ballYSpeedSet = ballYSpeedConst; //... wzdluz osi Y.
+
 let ballXSpeedIncr = ballXSpeedIncrConst; //Wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
 let ballYSpeedIncr = ballYSpeedIncrConst; //... osi Y.
-
-let ballXSpeedMax = ballXSpeedMaxConst; //Ustawialna maksymalna wartosc predkosci poruszania sie pilki wzdluz osi X.
-let ballYSpeedMax = ballYSpeedMaxConst; //... osi Y.
 //-------------------------------------------
 
 
@@ -159,8 +159,6 @@ const inpSpeedX = document.getElementById('speedX');
 const inpSpeedY = document.getElementById('speedY');
 const inpSpeedXIncr = document.getElementById('speedXIncr');
 const inpSpeedYIncr = document.getElementById('speedYIncr');
-const inpSpeedXMax = document.getElementById('speedXMax');
-const inpSpeedYMax = document.getElementById('speedYMax');
 
 const inpHeightPadL = document.getElementById('heightPadL');
 const inpHeightPadR = document.getElementById('heightPadR');

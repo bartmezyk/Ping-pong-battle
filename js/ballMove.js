@@ -1,3 +1,17 @@
+//Wykonaj czynnosci po odbiciu pilki od dluzszej krawedzi paletek.
+const ballPaddleBounce = () =>
+{
+	ballXSpeed = -ballXSpeed; //Zwrot predkosci na przeciwny.
+
+	speedUp();
+
+	bounceCounter++;
+	showBounce();
+
+	ballMoveRight = !ballMoveRight;
+}
+
+
 //Przesun pilke.
 const ballMove = () =>
 {
@@ -8,7 +22,8 @@ const ballMove = () =>
 	{
 		ballYSpeed = -ballYSpeed; //Przeciwny zwrot poruszania sie pilki w osi Y.
 		
-        //+++++Podszybszenie pilki+++++
+        //Zwieksz predkosc pilki.
+		speedUp();
 	}
 	
     //Odbicie pilki od lewej krawedzi pola gry (przegrana paletki lewej).
@@ -27,32 +42,12 @@ const ballMove = () =>
     //Odbicie pilki od dluzszej krawedzi paletki lewej.
 	if((ballX <= (padX + padWidth)) && (ballX >= (padX + padWidth + ballXSpeed)))
 	{
-		if((ballY > (padLY - ballSize)) && ((ballY + ballSize) < (padLY + padLHeight + ballSize)))
-		{
-			ballXSpeed = -ballXSpeed;
-
-			//+++++Podszybszenie pilki+++++
-
-			bounceCounter++;
-			showBounce();
-
-			ballMoveRight = true;
-		}
+		if((ballY > (padLY - ballSize)) && ((ballY + ballSize) < (padLY + padLHeight + ballSize))) ballPaddleBounce();
 	}
     //Odbicie pilki od dluzszej krawedzi paletki prawej.
 	else if(((ballX + ballSize) >= (canvasWidth - padX - padWidth)) && ((ballX + ballSize) <= (canvasWidth - padX - padWidth + ballXSpeed)))
 	{
-		if((ballY > (padRY - ballSize)) && ((ballY + ballSize) < (padRY + padRHeight + ballSize)))
-		{
-			ballXSpeed = -ballXSpeed;
-
-			//+++++Podszybszenie pilki+++++
-
-			bounceCounter++;
-			showBounce();
-
-			ballMoveRight = false;
-		}
+		if((ballY > (padRY - ballSize)) && ((ballY + ballSize) < (padRY + padRHeight + ballSize))) ballPaddleBounce();
 	}
     //Odbicie pilki od krotszej krawedzi paletki lewej.
     else if((ballX < (padX + padWidth)) && (ballX > (padX - padWidth)))

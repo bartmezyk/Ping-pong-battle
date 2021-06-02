@@ -2,10 +2,7 @@
 const keyDown = e =>
 {
     //Pauza lub wznowienie gry po kliknieciu klawisza 't'.
-    if(e.key == 't' || e.key == 'T')
-	{
-		pauseGame = !pauseGame;
-	}
+    if(e.key == 't' || e.key == 'T') pauseGame = !pauseGame;
 	
     //Jesli wybrany tryb to multiplayer - poruszaj paletkami.
 	if(mode == 2 && !pauseGame)

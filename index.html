@@ -90,14 +90,26 @@
                     </div>
                     <div data-key="1" class="settingsContent">
                         <div class="settingsContent__left">
-                            <div>Actual speed: </div>
-                            <div><input type="number" id="speedX" class="settingsContent__input" step="0.1"><label for="speedX"> - X</label></div>
-                            <div><input type="number" id="speedY" class="settingsContent__input" step="0.1"><label for="speedY"> - Y</label></div>
+                            <div>Start speed: </div>
+                            <div>
+                                <input type="number" id="speedX" class="settingsContent__input" step="0.1" min="-40" max="40">
+                                <label for="speedX"> - X</label>
+                            </div>
+                            <div>
+                                <input type="number" id="speedY" class="settingsContent__input" step="0.1" min="-40" max="40">
+                                <label for="speedY"> - Y</label>
+                            </div>
                         </div>
                         <div class="settingsContent__right">
                             <div>Bounce increment: </div>
-                            <div><input type="number" id="speedXIncr" class="settingsContent__input" step="0.01"><label for="speedXIncr"> - X</label></div>
-                            <div><input type="number" id="speedYIncr" class="settingsContent__input" step="0.01"><label for="speedYIncr"> - Y</label></div>
+                            <div>
+                                <input type="number" id="speedXIncr" class="settingsContent__input" step="0.01" min="0" max="1">
+                                <label for="speedXIncr"> - X</label>
+                            </div>
+                            <div>
+                                <input type="number" id="speedYIncr" class="settingsContent__input" step="0.01" min="0" max="1">
+                                <label for="speedYIncr"> - Y</label>
+                            </div>
                         </div>
                         <div class="applyButton">
                             <div class="applyButton__text">apply</div>
@@ -169,6 +181,7 @@
     <script src="js/change.js"></script>
     <script src="js/check.js"></script>
     <script src="js/keyDown.js"></script>
+    <script src="js/speedUp.js"></script>
     <script src="js/game.js"></script>
 </body>
 </html>

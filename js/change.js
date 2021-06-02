@@ -77,7 +77,69 @@ const changePaddleSpeed = () =>
 
 const changeBallSpeed = () =>
 {
+	const inpX = parseFloat(inpSpeedX.value);
+	const inpY = parseFloat(inpSpeedY.value);
+	const inpXIncr = parseFloat(inpSpeedXIncr.value);
+	const inpYIncr = parseFloat(inpSpeedYIncr.value);
 
+	if(!isNaN(inpX) && (inpX != ballXSpeedSet))
+	{
+		if(inpX >= -40 && inpX <= 40) ballXSpeedSet = inpX;
+		else
+		{
+			if(inpX < -40) ballXSpeedSet = -40;
+			else if(inpX > 40) ballXSpeedSet = 40;
+
+			inpSpeedX.value = ballXSpeedSet;
+		}
+
+		ballXSpeed = ballXSpeedSet;
+
+		if(ballXSpeed > 0 ) ballMoveRight = true;
+		else ballMoveRight = false;
+
+		changeBallPositionToCenter();
+	}
+
+	if(!isNaN(inpY) && (inpY != ballYSpeedSet))
+	{
+		if(inpY >= -40 && inpY <= 40) ballYSpeedSet = inpY;
+		else
+		{
+			if(inpY < -40) ballYSpeedSet = -40;
+			else if(inpY > 40) ballYSpeedSet = 40;
+
+			inpSpeedY.value = ballYSpeedSet;
+		}
+
+		ballYSpeed = ballYSpeedSet;
+
+		changeBallPositionToCenter();
+	}
+
+	if(!isNaN(inpXIncr) && (inpXIncr != ballXSpeedIncr))
+	{
+		if(inpXIncr >= 0 && inpXIncr <= 1) ballXSpeedIncr = inpXIncr;
+		else
+		{
+			if(inpXIncr < 0) ballXSpeedIncr = 0;
+			else if(inpXIncr > 1) ballXSpeedIncr = 1;
+
+			inpSpeedXIncr.value = ballXSpeedIncr;
+		}
+	}
+
+	if(!isNaN(inpYIncr) && (inpYIncr != ballYSpeedIncr))
+	{
+		if(inpYIncr >= 0 && inpYIncr <= 1) ballYSpeedIncr = inpYIncr;
+		else
+		{
+			if(inpYIncr < 0) ballYSpeedIncr = 0;
+			else if(inpYIncr > 1) ballYSpeedIncr = 1;
+
+			inpSpeedYIncr.value = ballYSpeedIncr;
+		}
+	}
 }
 
 //Ustawi pilke na srodku boiska.
