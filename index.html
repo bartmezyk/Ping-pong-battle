@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ping pong battle</title>
 
-	<link rel="stylesheet" href="css/fontello.css"> <!-- Podpiecie fontello zeby zastosowac paletke ping-pong'owa w logo witryny. -->
+	<link rel="stylesheet" href="css/fontello.css"> <!-- Na paletke ping-pong'owa w logo witryny. -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed&display=swap" rel="stylesheet"> <!-- Podpiecie fontu Lobster na logo i Roboto Condensed na zawartosc witryny. -->
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed&display=swap" rel="stylesheet"> <!-- Font Lobster na logo, Roboto Condensed na zawartosc witryny. -->
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -53,25 +53,31 @@
                     <div data-key="0" class="settingsContent settingsContent--active">
                         <div class="settingsContent__left">
                             <div>
-                                <label><input data-mode="0" type="radio" name="mode" class="mode" checked="checked"> Single player - without computer</label>
+                                <input data-mode="0" type="radio" name="mode" id="sinPlaWithoutCom" class="mode" checked="checked">
+                                <label for="sinPlaWithoutCom"> Single player - without computer</label>
                             </div>
                             <div>
-                                <label><input data-mode="1" type="radio" name="mode" class="mode"> Single player - with computer</label>
+                                <input data-mode="1" type="radio" name="mode" id="sinPlaWithCom" class="mode">
+                                <label for="sinPlaWithCom"> Single player - with computer</label>
                             </div>
                             <div>
-                                <label><input data-mode="2" type="radio" name="mode" class="mode"> Multiplayer (Q A) ([ ,)</label>
+                                <input data-mode="2" type="radio" name="mode" id="multiPlay" class="mode">
+                                <label for="multiPlay"> Multiplayer (Q A) ([ ,)</label>
                             </div>
                         </div>
 
                         <div class="settingsContent__right settingsContent__right--deactive">
                             <div>
-                                <label><input data-modecom="0" type="radio" name="modeCom" id="easyCom" class="modeCom" checked="checked"> Easy</label>
+                                <input data-modecom="0" type="radio" name="modeCom" id="easyCom" class="modeCom" checked="checked">
+                                <label for="easyCom"> Easy</label>
                             </div>
                             <div>
-                                <label><input data-modecom="1" type="radio" name="modeCom" id="medCom" class="modeCom"> Medium</label>
+                                <input data-modecom="1" type="radio" name="modeCom" id="medCom" class="modeCom">
+                                <label for="medCom"> Medium</label>
                             </div>
                             <div>
-                                <label><input data-modecom="2" type="radio" name="modeCom" id="hardCom" class="modeCom"> Hard</label>
+                                <input data-modecom="2" type="radio" name="modeCom" id="hardCom" class="modeCom">
+                                <label for="hardCom"> Hard</label>
                             </div>
                         </div>
                         <div class="settingsContent__right settingsContent__right--deactive">
