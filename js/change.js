@@ -1,8 +1,11 @@
 //Zmien tryb gry.
 const changeMode = e =>
 {
-	//Zmien tryb gry w zmiennej globalnej.
-    mode = e.target.dataset.mode;
+	//Zmien tryb gry w zmiennej globalnej. Jesli nie podeslano argumentu eventu to uznaj, ze wybrano radiobox pierwszy, czyli single player bez komputera.
+	if(e === undefined) mode = 0;
+    else mode = e.target.dataset.mode;
+
+	radioModes[mode].checked = true;
 
 	//Zmien zawartosc w prawej czesci komtentu w menu ustawien w zaleznosci od wybranego radioboxa (poprzez nadanie lub zabranie klasy).
 	if(mode == 0)
@@ -31,8 +34,11 @@ const changeMode = e =>
 //Zmien poziom gracza komputerowego.
 const changeModeCom = e =>
 {
-	//Zmien poziom gracza komputerowego w zmiennej globalnej.
-	modeCom = e.target.dataset.modecom;
+	//Jesli nie podeslano argumentu eventu to uznaj, ze wybrano radiobox pierwszy, czyli tryb easy komputera.
+	if(e === undefined) modeCom = 0;
+    else modeCom = e.target.dataset.modecom;
+
+	radioModesCom[modeCom].checked = true;
 }
 
 const changePaddleSpeed = () =>

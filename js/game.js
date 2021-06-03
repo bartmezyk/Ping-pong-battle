@@ -38,6 +38,8 @@ const gameOver = defeatedPaddle =>
 
 	bounceCounter = 0;
 	showBounce();
+
+	showSpeed();
 }
 
 //60 razy na sekunde pole gry odswiezane.

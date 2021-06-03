@@ -92,7 +92,6 @@ const lineColorConst = '#ffffff'; //Startowy kolor linii poziomej na srodku bois
 
 const padLColorConst = '#ff0000'; //Startowy kolor paletki lewej.
 const padRColorConst = '#0000ff'; //... prawej.
-
 const ballColorConst = '#ff9100'; //Startowy kolor pilki.
 
 //----- wartosci zmienne -----
@@ -102,7 +101,6 @@ let linesColor = lineColorConst; //Kolor linii poziomej.
 
 let padLColor = padLColorConst; //Kolor paletki lewej.
 let padRColor = padRColorConst; //... prawej.
-
 let ballColor = ballColorConst; //Kolor pilki.
 //-------------------------------------------
 
@@ -142,9 +140,10 @@ const chooseButtons = document.querySelectorAll('.chooseButton');
 
 const settingsContents = document.querySelectorAll('.settingsContent');
 
-const scoreResetButton = document.querySelector('.score__reset');
-
 const applyButtons = document.querySelectorAll('.applyButton');
+
+const scoreResetButton = document.querySelector('.score__reset');
+const settingsResetButton = document.querySelector('.settings__reset');
 
 //----- radioboxy -----
 const radioModes = document.querySelectorAll('.mode');

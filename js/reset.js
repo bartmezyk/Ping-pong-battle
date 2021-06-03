@@ -14,4 +14,44 @@ const resetScore = () =>
 	showBounce();
 }
 
+//Resetuj ustawienia.
+const resetSetting = () =>
+{
+	//Zresetowanie predkosci paletek.
+	padLSpeed = padLSpeedConst;
+	padRSpeed = padRSpeedConst;
+
+	//Zresetowanie predkosci startowej i dodawanej pilki.
+	ballXSpeedSet = ballXSpeedConst;
+	ballYSpeedSet = ballYSpeedConst;
+	ballXSpeedIncr = ballXSpeedIncrConst;
+	ballYSpeedIncr = ballYSpeedIncrConst;
+
+	//Zresetowanie wielkosci paletek i pilki.
+	padLHeight = padLHeightConst;
+	padRHeight = padRHeightConst;
+	ballSize = ballSizeConst;
+
+	//Zresetowanie kolorow.
+	pitchColor = pitchColorConst;
+	netColor = netColorConst;
+	linesColor = lineColorConst;
+	padLColor = padLColorConst;
+	padRColor = padRColorConst;
+	ballColor = ballColorConst;
+
+	//Reset radioboxow w menu ustawien 'MODE'.
+	changeMode();
+	changeModeCom();
+
+	settingMain(); //Reset wygladu w menu ustawien.
+
+	//Zresetowanie predkosci aktualnej pilki.
+	ballXSpeed = ballXSpeedSet;
+	ballYSpeed = ballYSpeedSet;
+
+	changeBallPositionToCenter();
+}
+
 scoreResetButton.addEventListener('click', resetScore);
+settingsResetButton.addEventListener('click', resetSetting);
