@@ -1,5 +1,5 @@
 //Nadaj wspolrzedne paletce (lewej badz prawej) poruszanej przez gracza.
-const playerPaddleMove = e =>
+const paddlePlayerMove = e =>
 {
     //Jesli tryb gry inny niz multiplayer.
     if(mode != 2)
@@ -40,7 +40,7 @@ const playerPaddleMove = e =>
 }
 
 //Nadaj wspolrzedne paletce prawej poruszanej przez komputer.
-const computerPaddleMove = () =>
+const paddleComputerMove = () =>
 {
     let comPadSpeed;
 

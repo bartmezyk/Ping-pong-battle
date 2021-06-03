@@ -57,8 +57,8 @@ const ballYSpeedIncrMax = 1; //... osi Y.
 //----- wartosci zmienne -----
 let ballSize = ballSizeConst; //Dlugosc boku kwadratu 'pilki'.
 
-let ballX = canvasWidth/2 - ballSize/2; //Polozenie lewego gornego rogu 'pilki' wzdluz osi X (na poczatku gry pilka jest dokladnie na srodku boiska).
-let ballY = canvasHeight/2 - ballSize/2; //... osi Y.
+let ballX = canvasWidth / 2 - ballSize / 2; //Polozenie lewego gornego rogu 'pilki' wzdluz osi X (na poczatku gry pilka jest dokladnie na srodku boiska).
+let ballY = canvasHeight / 2 - ballSize / 2; //... osi Y.
 
 let ballMoveRight = true; //Pilka porusza sie w prawo (true).
 

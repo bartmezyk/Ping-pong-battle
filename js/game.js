@@ -7,7 +7,7 @@ const gameRefresh = () =>
 		ballMove();
 		drawPaddleLeft();
 		//Jesli tryb gry z komputerem to wlacz automatyczne nadawanie wspolrzednych paletce prawej.
-		if(mode == 1) computerPaddleMove();
+		if(mode == 1) paddleComputerMove();
 		drawPaddleRight();
 	}
 }
