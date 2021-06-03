@@ -132,6 +132,8 @@ let bounceBest = 0; //Najwieksza ilosc odbic pilki od paletek podczas pojedyncze
 let pauseGame = false; //Mozliwosc zatrzymania gry (klikajac klawisz 't').
 const year = new Date().getFullYear();
 
+const canvasDiv = document.querySelector('.canvas');
+
 const infoScore      = document.querySelector('.info__score');
 const infoSpeed      = document.querySelector('.info__speed');
 const infoSpeedBest  = document.querySelector('.info__speedBest');

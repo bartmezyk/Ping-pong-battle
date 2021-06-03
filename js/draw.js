@@ -9,6 +9,8 @@ const drawPitch = () =>
 
 	ctx.fillStyle = linesColor;
 	ctx.fillRect(0, canvasHeight/2, canvasWidth, 1); //Rysuj linie pozioma na srodku boiska.
+
+	canvasDiv.style.outline = `3px solid ${linesColor}`; //Styluj obramowanie pola gry.
 }
 
 //Rysuj paletke lewa.
