@@ -23,16 +23,17 @@ const gameOver = defeatedPaddle =>
 	ballY = Math.floor(Math.random() * (canvasHeight - ballSize)); //Losowanie polozenia pilki wzdluz osi Y z zakresu wysokosci pola gry.
 	
 	ballXSpeed = -ballXSpeed; //Aby pilka poruszala sie w kierunku gracza, ktory wygral poprzednia rozgrywke.
-	ballMoveRight = !ballMoveRight;
 
-	if(ballXSpeed < 0) ballXSpeed = -ballXSpeedSet;
-	else ballXSpeed = ballXSpeedSet;
+	if(ballXSpeed < 0 && ballXSpeedStart > 0) ballXSpeed = -ballXSpeedStart;
+	else if(ballXSpeed < 0 && ballXSpeedStart < 0) ballXSpeed = ballXSpeedStart;
+	else if(ballXSpeed > 0 && ballXSpeedStart > 0) ballXSpeed = ballXSpeedStart;
+	else if(ballXSpeed > 0 && ballXSpeedStart < 0) ballXSpeed = -ballXSpeedStart;
 
 	if(ballXSpeed < 0) ballMoveRight = false;
 	else ballMoveRight = true;
 
-	if(ballYSpeed < 0) ballYSpeed = -ballYSpeedSet;
-	else ballYSpeed = ballYSpeedSet;
+	if(ballYSpeed < 0) ballYSpeed = -ballYSpeedStart;
+	else ballYSpeed = ballYSpeedStart;
 
 	showScore();
 

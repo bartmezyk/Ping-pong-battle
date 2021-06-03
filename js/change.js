@@ -62,28 +62,28 @@ const changePaddleSpeed = () =>
 const changeBallSpeed = () =>
 {
 	//Predkosc startowa pilki wzdluz osi X.
-	if(checkNumber(inpSpeedX, -ballXSpeedMax, ballXSpeedMax, ballXSpeedSet)) 
+	if(checkNumber(inpSpeedX, -ballXSpeedMax, ballXSpeedMax, ballXSpeedStart)) 
 	{
-		ballXSpeedSet = checkNumber(inpSpeedX, -ballXSpeedMax, ballXSpeedMax, ballXSpeedSet);
+		ballXSpeedStart = checkNumber(inpSpeedX, -ballXSpeedMax, ballXSpeedMax, ballXSpeedStart);
 
-		ballXSpeed = ballXSpeedSet;
+		ballXSpeed = ballXSpeedStart;
 
 		if(ballXSpeed > 0 ) ballMoveRight = true;
 		else ballMoveRight = false;
 
 		showSpeed();
-		changeBallPositionToCenter();
+		ballPositionCenter();
 	}
 
 	//Predkosc startowa pilki wzdluz osi Y.
-	if(checkNumber(inpSpeedY, -ballYSpeedMax, ballYSpeedMax, ballYSpeedSet))
+	if(checkNumber(inpSpeedY, -ballYSpeedMax, ballYSpeedMax, ballYSpeedStart))
 	{
-		ballYSpeedSet = checkNumber(inpSpeedY, -ballYSpeedMax, ballYSpeedMax, ballYSpeedSet);
+		ballYSpeedStart = checkNumber(inpSpeedY, -ballYSpeedMax, ballYSpeedMax, ballYSpeedStart);
 
-		ballYSpeed = ballYSpeedSet;
+		ballYSpeed = ballYSpeedStart;
 
 		showSpeed();
-		changeBallPositionToCenter();
+		ballPositionCenter();
 	}
 
 	//Predkosc dodawana pilki wzdluz osi X.
@@ -91,13 +91,6 @@ const changeBallSpeed = () =>
 
 	//Predkosc dodawana pilki wzdluz osi Y.
 	if(checkNumber(inpSpeedYIncr, 0, ballYSpeedIncrMax, ballYSpeedIncr)) ballYSpeedIncr = checkNumber(inpSpeedYIncr, 0, ballYSpeedIncrMax, ballYSpeedIncr);
-}
-
-//Ustaw pilke na srodku boiska.
-const changeBallPositionToCenter = () =>
-{
-	ballX = canvasWidth / 2 - ballSize / 2; 
-	ballY = canvasHeight / 2 - ballSize / 2;
 }
 
 //Zmien wielkosc paletek i pilki.
@@ -112,7 +105,7 @@ const changeSize = () =>
 	else
 	{
 		//Aby pilka po modyfikacji wielkosci paletek znajdowala sie na srodku pola gry (aby ktos nie zechcial zmodyfikowac wielkosc (a wiec i polozenie) paletki w miejscu, gdzie akurat polozona jest pilka).
-		changeBallPositionToCenter();
+		ballPositionCenter();
 
 		//Aby paletka po modyfikacji wielkosci nie wystawala pod dolna krawedz pola gry.
 		if(padLY + padLHeight > canvasHeight) padLY = canvasHeight - padLHeight;
@@ -124,7 +117,7 @@ const changeSize = () =>
 	if(padRHeight == false) padRHeight = oldSize;
 	else
 	{
-		changeBallPositionToCenter();
+		ballPositionCenter();
 
 		if(padRY + padRHeight > canvasHeight) padRY = canvasHeight - padRHeight;
 	}
@@ -136,7 +129,7 @@ const changeSize = () =>
 	else
 	{
 		//Aby pilka po modyfikacji jej wielkosci znajdowala sie na srodku pola gry (aby ktos nie zechcial zwiekszac pilki, ktora znajdowalaby sie przy krawedzi pola gry, co mogloby spowodowac ze czesc pilki zaczelaby wystawac poza pole gry)
-		changeBallPositionToCenter();
+		ballPositionCenter();
 	}
 
 	//Aktualizuj wyglad elementow w polu gry.

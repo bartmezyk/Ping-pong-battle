@@ -1,16 +1,14 @@
-//Wykonaj czynnosci po odbiciu pilki od dluzszej krawedzi paletek.
+//Wykonaj czynnosci po odbiciu pilki od dluzszej krawedzi paletek (potrzebne do funkcji ballMove())
 const ballPaddleBounce = () =>
 {
 	ballXSpeed = -ballXSpeed; //Zwrot predkosci na przeciwny.
-
-	speedUp();
+	ballMoveRight = !ballMoveRight;
 
 	bounceCounter++;
 	showBounce();
 
-	ballMoveRight = !ballMoveRight;
+	ballSpeedUp();
 }
-
 
 //Przesun pilke.
 const ballMove = () =>
@@ -22,20 +20,13 @@ const ballMove = () =>
 	{
 		ballYSpeed = -ballYSpeed; //Przeciwny zwrot poruszania sie pilki w osi Y.
 		
-        //Zwieksz predkosc pilki.
-		speedUp();
+		ballSpeedUp();
 	}
 	
     //Odbicie pilki od lewej krawedzi pola gry (przegrana paletki lewej).
-	if((ballX + ballSize) < 0)
-    {
-        gameOver('left');
-    } 
+	if((ballX + ballSize) < 0) gameOver('left');
     //Odbicie pilki od prawej krawedzi pola gry (przegrana paletki prawej).
-	else if(ballX > canvasWidth)
-    {
-        gameOver('right');
-    }
+	else if(ballX > canvasWidth) gameOver('right');
 
     //--------------------- ODBICIA PILKI OD KRAWEDZI PALETEK ----------------------
 
@@ -111,3 +102,24 @@ const ballMove = () =>
 	
 	drawBall();
 }
+
+//Zwieksz predkosc pilki.
+const ballSpeedUp = () =>
+{
+	if((ballXSpeed > 0) && (ballXSpeed < ballXSpeedMax)) ballXSpeed += ballXSpeedIncr;
+	else if((ballXSpeed < 0) && (ballXSpeed > -ballXSpeedMax)) ballXSpeed -= ballXSpeedIncr;
+		
+	if((ballYSpeed > 0) && (ballYSpeed < ballYSpeedMax)) ballYSpeed += ballYSpeedIncr;
+	else if((ballYSpeed < 0) && (ballYSpeed > -ballYSpeedMax)) ballYSpeed -= ballYSpeedIncr;	
+
+    //Zaktualizuj predkosc pilki.
+	showSpeed();
+}
+
+//Ustaw pilke na srodku boiska.
+const ballPositionCenter = () =>
+{
+	ballX = canvasWidth / 2 - ballSize / 2; 
+	ballY = canvasHeight / 2 - ballSize / 2;
+}
+

@@ -13,7 +13,7 @@ const init = () =>
     canvas.addEventListener('mousemove', playerPaddleMove);
 
     //Klikniecie klawisza na klawiaturze.
-    window.addEventListener('keydown', keyDown);
+    window.addEventListener('keydown', keyboard);
 
     //Ustawienie nasluchiwania na przyciski i inputy kolorow w menu ustawien.
     chooseButtons.forEach(button => button.addEventListener('click', settingMain));

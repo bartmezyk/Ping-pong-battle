@@ -22,8 +22,8 @@ const resetSetting = () =>
 	padRSpeed = padRSpeedConst;
 
 	//Zresetowanie predkosci startowej i dodawanej pilki.
-	ballXSpeedSet = ballXSpeedConst;
-	ballYSpeedSet = ballYSpeedConst;
+	ballXSpeedStart = ballXSpeedConst;
+	ballYSpeedStart = ballYSpeedConst;
 	ballXSpeedIncr = ballXSpeedIncrConst;
 	ballYSpeedIncr = ballYSpeedIncrConst;
 
@@ -47,12 +47,12 @@ const resetSetting = () =>
 	settingMain(); //Reset wygladu w menu ustawien.
 
 	//Zresetowanie predkosci aktualnej pilki.
-	ballXSpeed = ballXSpeedSet;
-	ballYSpeed = ballYSpeedSet;
+	ballXSpeed = ballXSpeedStart;
+	ballYSpeed = ballYSpeedStart;
 	showSpeed();
 
 	//Zresetowanie polozenia pilki i paletek na srodek wzdluz osi Y.
-	changeBallPositionToCenter();
+	ballPositionCenter();
 	padLY = canvasHeight / 2 - padLHeight / 2;
 	padRY = canvasHeight / 2 - padRHeight / 2;
 }

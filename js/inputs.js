@@ -36,8 +36,8 @@ const inputsSet = () =>
     inpSpeedPadR.value = padRSpeed;
 
     //Predkosc startowa pilki.
-    inpSpeedX.value = ballXSpeedSet;
-    inpSpeedY.value = ballYSpeedSet;
+    inpSpeedX.value = ballXSpeedStart;
+    inpSpeedY.value = ballYSpeedStart;
 
     //Predkosc dodawana pilki.
     inpSpeedXIncr.value = ballXSpeedIncr;

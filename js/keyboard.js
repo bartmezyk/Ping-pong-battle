@@ -1,5 +1,5 @@
 //Wykonaj czynnosci po kliknieciu klawisza na klawiaturze.
-const keyDown = e =>
+const keyboard = e =>
 {
     //Pauza lub wznowienie gry po kliknieciu klawisza 't'.
     if(e.key == 't' || e.key == 'T') pauseGame = !pauseGame;

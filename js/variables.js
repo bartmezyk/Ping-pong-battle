@@ -65,8 +65,8 @@ let ballMoveRight = true; //Pilka porusza sie w prawo (true).
 let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X.
 let ballYSpeed = ballYSpeedConst; //... osi Y.
 
-let ballXSpeedSet = ballXSpeedConst; //Predkosc pilki wzdluz osi X po wpisaniu przez gracza.
-let ballYSpeedSet = ballYSpeedConst; //... osi Y.
+let ballXSpeedStart = ballXSpeedConst; //Ustawialna poczatkowa predkosc pilki wzdluz osi X.
+let ballYSpeedStart = ballYSpeedConst; //... osi Y.
 
 let ballXSpeedIncr = ballXSpeedIncrConst; //Wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
 let ballYSpeedIncr = ballYSpeedIncrConst; //... osi Y.
@@ -110,7 +110,7 @@ let ballColor = ballColorConst; //Kolor pilki.
 //-------------------------------------------
 
 
-//-------------------GRACZ KOMPUTEROWY------------------------
+//------------------- GRACZ KOMPUTEROWY ------------------------
 const comEasyLev = 5; //Poziom trudnosci komputera latwy.
 const comMediumLev = 10; //... sredni.
 const comHardLev = 15; //... trudny.
@@ -130,8 +130,11 @@ let bounceBest = 0; //Najwieksza ilosc odbic pilki od paletek podczas pojedyncze
 
 //------------------- INNE ------------------------
 let pauseGame = false; //Mozliwosc zatrzymania gry (klikajac klawisz 't').
-const year = new Date().getFullYear();
 
+const year = new Date().getFullYear(); //Potrzebne do wpisania aktualnego roku w glownym footerze strony.
+//-------------------------------------------
+
+//------------------- ELEMENTY DOM ------------------------
 const canvasDiv = document.querySelector('.canvas');
 
 const infoScore      = document.querySelector('.info__score');
