@@ -23,7 +23,7 @@ const settingMain = e =>
     });
 
     //Aktualizuj inputy poprzez wstawienie do nich wartosci odpowiednich zmiennych.
-    settingInputsUpdate();
+    inputsSet();
 }
 
 //Wywolaj odpowiednie funkcje po kliknieciu przycisku 'APPLY' w menu ustawien.
@@ -35,30 +35,7 @@ const settingApply = () =>
     else console.error(`Wrong value in "settingChoose" variable: ${settingChoose}.`);
 }
 
-//Wstaw wartosci odpowiednich zmiennych do inputow w menu ustawien.
-const settingInputsUpdate = () =>
-{
-    inpSpeedPadL.value = padLSpeed;
-    inpSpeedPadR.value = padRSpeed;
-
-    inpSpeedX.value = ballXSpeedSet;
-    inpSpeedY.value = ballYSpeedSet;
-    inpSpeedXIncr.value = ballXSpeedIncr;
-    inpSpeedYIncr.value = ballYSpeedIncr;
-
-    inpHeightPadL.value = padLHeight;
-    inpHeightPadR.value = padRHeight;
-    inpSizeBall.value = ballSize;
-
-    inpColorPitch.value = pitchColor;
-    inpColorNet.value = netColor;
-    inpColorLines.value = linesColor;
-    inpColorPadL.value = padLColor;
-    inpColorPadR.value = padRColor;
-    inpColorBall.value = ballColor;
-}
-
-settingInputsUpdate();
+inputsSet();
 
 chooseButtons.forEach(button =>
 {
