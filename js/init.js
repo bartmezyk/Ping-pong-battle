@@ -1,0 +1,1 @@
+mainFooter.innerHTML = `Bartosz Mężyk ${year} &copy; Wszelkie prawa zastrzeżone.`;
