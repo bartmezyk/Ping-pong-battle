@@ -16,3 +16,31 @@ const checkColor = color =>
     console.error(`Wrong length or first sign different than '#' in some input/s.`);
 	return false;
 }
+
+//Sprawdz poprawnosc liczby wprowadzonej w inpucie.
+const checkNumber = (input, min, max, currentVal) =>
+{
+	//Zawartosc inputa.
+	const inpVal = parseFloat(input.value);
+
+	//Nowa wartosc (jesli funkcja zwroci newVal = 0, to znaczy, ze nie jest mozliwe przypisanie nowej wartosci z inputa).
+	let newVal = 0;
+
+	//Jesli wprowadzona wartosc jest liczba i jest rozna od aktualnie ustawionej wartosci.
+	if(!isNaN(inpVal) && (inpVal != currentVal))
+	{
+		//Jesli wprowadzona wartosc miesci sie w przedziale <min, max>.
+		if(inpVal >= min && inpVal <= max) newVal = inpVal;
+		else
+		{
+			//Jesli jest mniejsza niz dolna granica przedzialu.
+			if(inpVal < min) newVal = min;
+			//Jesli wieksza niz gorna granica.
+			else if(inpVal > max) newVal = max;
+
+			//Odswiez zawartosc inputa o prawidlowa wartosc (dolna lub gorna granice przedzialu).
+			input.value = newVal;
+		}
+	}
+	return newVal;
+}

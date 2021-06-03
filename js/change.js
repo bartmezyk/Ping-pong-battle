@@ -41,63 +41,27 @@ const changeModeCom = e =>
 	radioModesCom[modeCom].checked = true;
 }
 
+//Zmien predkosc paletek.
 const changePaddleSpeed = () =>
 {
-	//Jesli przycik 'APPLY' w menu ustawien w opcji 'MODE' nie jest ukryty.
+	//Jesli przycik 'APPLY' w menu ustawien w opcji 'MODE' jest widoczny (aby nie dalo sie zmienic predkosci paletek, czyli kliknac go, gdy jest on ukryty).
 	if(!settModeBtn.classList.contains('applyButton--hidden'))
 	{
-		const inpPadL = parseFloat(inpSpeedPadL.value);
-		const inpPadR = parseFloat(inpSpeedPadR.value);
+		//Paletka lewa.
+		if(checkNumber(inpSpeedPadL, 1, canvasHeight, padLSpeed)) padLSpeed = checkNumber(inpSpeedPadL, 1, canvasHeight, padLSpeed);
 
 		//Paletka lewa.
-		if(!isNaN(inpPadL) && (inpPadL != padLSpeed))
-		{
-			//Jesli wprowadzona wartosc miesci sie w przedziale.
-			if(inpPadL >= 1 && inpPadL <= canvasHeight) padLSpeed = inpPadL;
-			else
-			{
-				//Jesli jest mniejsza niz dolna granica przedzialu.
-				if(inpPadL < 1) padLSpeed = 1;
-				//Jesli wieksza niz gorna granica.
-				else if(inpPadL > canvasHeight) padLSpeed = canvasHeight;
-
-				//Odswiez zawartosc inputa o prawidlowa wartosc (dolna lub gorna granice przedzialu).
-				inpSpeedPadL.value = padLSpeed;
-			}
-		}
-
-		//Paletka prawa.
-		if(!isNaN(inpPadR) && (inpPadR != padRSpeed))
-		{
-			if(inpPadR >= 1 && inpPadR <= canvasHeight) padRSpeed = inpPadR;
-			else
-			{
-				if(inpPadR < 1) padRSpeed = 1;
-				else if(inpPadR > canvasHeight) padRSpeed = canvasHeight;
-
-				inpSpeedPadR.value = padRSpeed;
-			}
-		}
+		if(checkNumber(inpSpeedPadR, 1, canvasHeight, padRSpeed)) padRSpeed = checkNumber(inpSpeedPadR, 1, canvasHeight, padRSpeed);
 	}
 }
 
+//Zmien predkosc startowa i dodawana pilki.
 const changeBallSpeed = () =>
 {
-	const inpX = parseFloat(inpSpeedX.value);
-	const inpY = parseFloat(inpSpeedY.value);
-	const inpXIncr = parseFloat(inpSpeedXIncr.value);
-	const inpYIncr = parseFloat(inpSpeedYIncr.value);
-
-	if(!isNaN(inpX) && (inpX != ballXSpeedSet))
+	//Predkosc startowa pilki wzdluz osi X.
+	if(checkNumber(inpSpeedX, -40, 40, ballXSpeedSet)) 
 	{
-		if(inpX >= -40 && inpX <= 40) ballXSpeedSet = inpX;
-		else
-		{
-			if(inpX < -40) ballXSpeedSet = -40;
-			else if(inpX > 40) ballXSpeedSet = 40;
-
-			inpSpeedX.value = ballXSpeedSet;
-		}
+		ballXSpeedSet = checkNumber(inpSpeedX, -40, 40, ballXSpeedSet);
 
 		ballXSpeed = ballXSpeedSet;
 
@@ -107,48 +71,24 @@ const changeBallSpeed = () =>
 		changeBallPositionToCenter();
 	}
 
-	if(!isNaN(inpY) && (inpY != ballYSpeedSet))
+	//Predkosc startowa pilki wzdluz osi Y.
+	if(checkNumber(inpSpeedY, -40, 40, ballYSpeedSet))
 	{
-		if(inpY >= -40 && inpY <= 40) ballYSpeedSet = inpY;
-		else
-		{
-			if(inpY < -40) ballYSpeedSet = -40;
-			else if(inpY > 40) ballYSpeedSet = 40;
-
-			inpSpeedY.value = ballYSpeedSet;
-		}
+		ballYSpeedSet = checkNumber(inpSpeedY, -40, 40, ballYSpeedSet);
 
 		ballYSpeed = ballYSpeedSet;
 
 		changeBallPositionToCenter();
 	}
 
-	if(!isNaN(inpXIncr) && (inpXIncr != ballXSpeedIncr))
-	{
-		if(inpXIncr >= 0 && inpXIncr <= 1) ballXSpeedIncr = inpXIncr;
-		else
-		{
-			if(inpXIncr < 0) ballXSpeedIncr = 0;
-			else if(inpXIncr > 1) ballXSpeedIncr = 1;
+	//Predkosc dodawana pilki wzdluz osi X.
+	if(checkNumber(inpSpeedXIncr, 0, 1, ballXSpeedIncr)) ballXSpeedIncr = checkNumber(inpSpeedXIncr, 0, 1, ballXSpeedIncr);
 
-			inpSpeedXIncr.value = ballXSpeedIncr;
-		}
-	}
-
-	if(!isNaN(inpYIncr) && (inpYIncr != ballYSpeedIncr))
-	{
-		if(inpYIncr >= 0 && inpYIncr <= 1) ballYSpeedIncr = inpYIncr;
-		else
-		{
-			if(inpYIncr < 0) ballYSpeedIncr = 0;
-			else if(inpYIncr > 1) ballYSpeedIncr = 1;
-
-			inpSpeedYIncr.value = ballYSpeedIncr;
-		}
-	}
+	//Predkosc dodawana pilki wzdluz osi Y.
+	if(checkNumber(inpSpeedYIncr, 0, 1, ballYSpeedIncr)) ballYSpeedIncr = checkNumber(inpSpeedYIncr, 0, 1, ballYSpeedIncr);
 }
 
-//Ustawi pilke na srodku boiska.
+//Ustaw pilke na srodku boiska.
 const changeBallPositionToCenter = () =>
 {
 	ballX = canvasWidth / 2 - ballSize / 2; 
@@ -158,26 +98,14 @@ const changeBallPositionToCenter = () =>
 //Zmien wielkosc paletek i pilki.
 const changeSize = () =>
 {
-	const inpPadL = parseFloat(inpHeightPadL.value);
-	const inpPadR = parseFloat(inpHeightPadR.value);
-	const inpBall = parseFloat(inpSizeBall.value);
+	let oldSize;
 
 	//Paletka lewa.
-	if(!isNaN(inpPadL) && (inpPadL != padLHeight))
+	oldSize = padLHeight;
+	padLHeight = checkNumber(inpHeightPadL, 20, canvasHeight, padLHeight);
+	if(padLHeight === false) padLHeight = oldSize;
+	else
 	{
-		//Jesli wprowadzona wartosc miesci sie w przedziale.
-		if(inpPadL >= 20 && inpPadL <= canvasHeight) padLHeight = inpPadL;
-		else
-		{
-			//Jesli jest mniejsza niz dolna granica przedzialu.
-			if(inpPadL < 20) padLHeight = 20;
-			//Jesli wieksza niz gorna granica.
-			else if(inpPadL > canvasHeight) padLHeight = canvasHeight;
-
-			//Odswiez zawartosc inputa o prawidlowa wartosc (dolna lub gorna granice przedzialu).
-			inpHeightPadL.value = padLHeight;
-		}
-
 		//Aby pilka po modyfikacji wielkosci paletek znajdowala sie na srodku pola gry (aby ktos nie zechcial zmodyfikowac wielkosc (a wiec i polozenie) paletki w miejscu, gdzie akurat polozona jest pilka).
 		changeBallPositionToCenter();
 
@@ -186,37 +114,24 @@ const changeSize = () =>
 	}
 
 	//Paletka prawa.
-	if(!isNaN(inpPadR) && (inpPadR != padRHeight))
+	oldSize = padRHeight;
+	padRHeight = checkNumber(inpHeightPadR, 20, canvasHeight, padRHeight);
+	if(padRHeight === false) padRHeight = oldSize;
+	else
 	{
-		if(inpPadR >= 20 && inpPadR <= canvasHeight) padRHeight = inpPadR;
-		else
-		{
-			if(inpPadR < 20) padRHeight = 20;
-			else if(inpPadR > canvasHeight) padRHeight = canvasHeight;
-
-			inpHeightPadR.value = padRHeight;
-		}
-
 		changeBallPositionToCenter();
 
 		if(padRY + padRHeight > canvasHeight) padRY = canvasHeight - padRHeight;
 	}
 
 	//Pilka.
-	if(!isNaN(inpBall) && (inpBall != ballSize))
+	oldSize = ballSize;
+	ballSize = checkNumber(inpSizeBall, 10, canvasHeight, ballSize);
+	if(ballSize === false) ballSize = oldSize;
+	else
 	{
-		console.log('pilka');
-		if(inpBall >= 10 && inpBall <= canvasHeight) ballSize = inpBall;
-		else
-		{
-			if(inpBall < 10) ballSize = 10;
-			else if(inpBall > canvasHeight) ballSize = canvasHeight;
-
-			inpSizeBall.value = ballSize;
-		}
-
 		//Aby pilka po modyfikacji jej wielkosci znajdowala sie na srodku pola gry (aby ktos nie zechcial zwiekszac pilki, ktora znajdowalaby sie przy krawedzi pola gry, co mogloby spowodowac ze czesc pilki zaczelaby wystawac poza pole gry)
-		changeBallPositionToCenter(); 
+		changeBallPositionToCenter();
 	}
 
 	//Aktualizuj wyglad elementow w polu gry.
