@@ -18,6 +18,7 @@ const padWidth = 20;
 
 const padLHeightConst = 100; //Startowa wysokosc paletki lewej.
 const padRHeightConst = 100; //... prawej.
+const padHeightMin = 20; //Minimalna  ustawialna wysokosc paletek.
 
 const padX = 70; //O ile paletki sa odsuniete od krotszych krawedzi canvas (lewa paletka od lewej krawedzi, a prawa od prawej).
 
@@ -39,29 +40,33 @@ let padRSpeed = padRSpeedConst; //... prawa ...
 //----------------- PILKA --------------------------
 //----- wartosci startowe -----
 const ballSizeConst = 20; //Startowa dlugosc boku kwadratu 'pilki'
+const ballSizeMin = 10; //Minimalna  ustawialna dlugosc boku kwadratu 'pilki'.
 
 const ballXSpeedConst = 5; //Startowa predkosc pilki wzdluz osi X.
-const ballYSpeedConst = 5; //... wzdluz osi Y.
+const ballYSpeedConst = 5; //... osi Y.
 
 const ballXSpeedIncrConst = .1; //Startowa wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
 const ballYSpeedIncrConst = .1; //... osi Y.
 
-const ballXSpeedMax = 40; //Maksymalna nieprzekraczalna wartosc predkosci poruszania sie pilki wzdluz osi X.
+const ballXSpeedMax = 40; //Maksymalna ustawialna wartosc predkosci poruszania sie pilki wzdluz osi X.
 const ballYSpeedMax = 40; //... osi Y.
+
+const ballXSpeedIncrMax = 1; //Maksymalna ustawialna wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
+const ballYSpeedIncrMax = 1; //... osi Y.
 
 //----- wartosci zmienne -----
 let ballSize = ballSizeConst; //Dlugosc boku kwadratu 'pilki'.
 
 let ballX = canvasWidth/2 - ballSize/2; //Polozenie lewego gornego rogu 'pilki' wzdluz osi X (na poczatku gry pilka jest dokladnie na srodku boiska).
-let ballY = canvasHeight/2 - ballSize/2; //... wzdluz osi Y.
+let ballY = canvasHeight/2 - ballSize/2; //... osi Y.
 
 let ballMoveRight = true; //Pilka porusza sie w prawo (true).
 
 let ballXSpeed = ballXSpeedConst; //Rzeczywista predkosc pilki wzdluz osi X.
-let ballYSpeed = ballYSpeedConst; //... wzdluz osi Y.
+let ballYSpeed = ballYSpeedConst; //... osi Y.
 
 let ballXSpeedSet = ballXSpeedConst; //Predkosc pilki wzdluz osi X po wpisaniu przez gracza.
-let ballYSpeedSet = ballYSpeedConst; //... wzdluz osi Y.
+let ballYSpeedSet = ballYSpeedConst; //... osi Y.
 
 let ballXSpeedIncr = ballXSpeedIncrConst; //Wartosc o jaka zwiekszac ma sie predkosc pilki po odbiciu od scian boiska i od paletek wzdluz osi X.
 let ballYSpeedIncr = ballYSpeedIncrConst; //... osi Y.

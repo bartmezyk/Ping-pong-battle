@@ -59,9 +59,9 @@ const changePaddleSpeed = () =>
 const changeBallSpeed = () =>
 {
 	//Predkosc startowa pilki wzdluz osi X.
-	if(checkNumber(inpSpeedX, -40, 40, ballXSpeedSet)) 
+	if(checkNumber(inpSpeedX, -ballXSpeedMax, ballXSpeedMax, ballXSpeedSet)) 
 	{
-		ballXSpeedSet = checkNumber(inpSpeedX, -40, 40, ballXSpeedSet);
+		ballXSpeedSet = checkNumber(inpSpeedX, -ballXSpeedMax, ballXSpeedMax, ballXSpeedSet);
 
 		ballXSpeed = ballXSpeedSet;
 
@@ -72,9 +72,9 @@ const changeBallSpeed = () =>
 	}
 
 	//Predkosc startowa pilki wzdluz osi Y.
-	if(checkNumber(inpSpeedY, -40, 40, ballYSpeedSet))
+	if(checkNumber(inpSpeedY, -ballYSpeedMax, ballYSpeedMax, ballYSpeedSet))
 	{
-		ballYSpeedSet = checkNumber(inpSpeedY, -40, 40, ballYSpeedSet);
+		ballYSpeedSet = checkNumber(inpSpeedY, -ballYSpeedMax, ballYSpeedMax, ballYSpeedSet);
 
 		ballYSpeed = ballYSpeedSet;
 
@@ -82,10 +82,10 @@ const changeBallSpeed = () =>
 	}
 
 	//Predkosc dodawana pilki wzdluz osi X.
-	if(checkNumber(inpSpeedXIncr, 0, 1, ballXSpeedIncr)) ballXSpeedIncr = checkNumber(inpSpeedXIncr, 0, 1, ballXSpeedIncr);
+	if(checkNumber(inpSpeedXIncr, 0, ballXSpeedIncrMax, ballXSpeedIncr)) ballXSpeedIncr = checkNumber(inpSpeedXIncr, 0, ballXSpeedIncrMax, ballXSpeedIncr);
 
 	//Predkosc dodawana pilki wzdluz osi Y.
-	if(checkNumber(inpSpeedYIncr, 0, 1, ballYSpeedIncr)) ballYSpeedIncr = checkNumber(inpSpeedYIncr, 0, 1, ballYSpeedIncr);
+	if(checkNumber(inpSpeedYIncr, 0, ballYSpeedIncrMax, ballYSpeedIncr)) ballYSpeedIncr = checkNumber(inpSpeedYIncr, 0, ballYSpeedIncrMax, ballYSpeedIncr);
 }
 
 //Ustaw pilke na srodku boiska.
@@ -102,8 +102,8 @@ const changeSize = () =>
 
 	//Paletka lewa.
 	oldSize = padLHeight;
-	padLHeight = checkNumber(inpHeightPadL, 20, canvasHeight, padLHeight);
-	if(padLHeight === false) padLHeight = oldSize;
+	padLHeight = checkNumber(inpHeightPadL, padHeightMin, canvasHeight, padLHeight);
+	if(padLHeight == false) padLHeight = oldSize;
 	else
 	{
 		//Aby pilka po modyfikacji wielkosci paletek znajdowala sie na srodku pola gry (aby ktos nie zechcial zmodyfikowac wielkosc (a wiec i polozenie) paletki w miejscu, gdzie akurat polozona jest pilka).
@@ -115,8 +115,8 @@ const changeSize = () =>
 
 	//Paletka prawa.
 	oldSize = padRHeight;
-	padRHeight = checkNumber(inpHeightPadR, 20, canvasHeight, padRHeight);
-	if(padRHeight === false) padRHeight = oldSize;
+	padRHeight = checkNumber(inpHeightPadR, padHeightMin, canvasHeight, padRHeight);
+	if(padRHeight == false) padRHeight = oldSize;
 	else
 	{
 		changeBallPositionToCenter();
@@ -126,8 +126,8 @@ const changeSize = () =>
 
 	//Pilka.
 	oldSize = ballSize;
-	ballSize = checkNumber(inpSizeBall, 10, canvasHeight, ballSize);
-	if(ballSize === false) ballSize = oldSize;
+	ballSize = checkNumber(inpSizeBall, ballSizeMin, canvasHeight, ballSize);
+	if(ballSize == false) ballSize = oldSize;
 	else
 	{
 		//Aby pilka po modyfikacji jej wielkosci znajdowala sie na srodku pola gry (aby ktos nie zechcial zwiekszac pilki, ktora znajdowalaby sie przy krawedzi pola gry, co mogloby spowodowac ze czesc pilki zaczelaby wystawac poza pole gry)
