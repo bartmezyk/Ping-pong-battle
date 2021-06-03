@@ -10,7 +10,7 @@ const init = () =>
     showSpeed();
 
     //Ruch myszki w polu gry.
-    canvas.addEventListener('mousemove', playerPaddleMove);
+    canvas.addEventListener('mousemove', paddlePlayerMove);
 
     //Klikniecie klawisza na klawiaturze.
     window.addEventListener('keydown', keyboard);
@@ -22,7 +22,7 @@ const init = () =>
     applyButtons.forEach(button => button.addEventListener('click', settingsApply));
     inpColors.forEach(color => color.addEventListener('input', changeColor));
     scoreResetButton.addEventListener('click', resetScore);
-    settingsResetButton.addEventListener('click', resetSetting);
+    settingsResetButton.addEventListener('click', resetSettings);
 
     //Automatycznie ustawiajacy sie aktualny rok w footerze glownym.
     mainFooter.innerHTML = `Bartosz Mężyk ${year} &copy; Wszelkie prawa zastrzeżone.`;

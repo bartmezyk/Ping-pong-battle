@@ -15,7 +15,7 @@ const resetScore = () =>
 }
 
 //Resetuj ustawienia.
-const resetSetting = () =>
+const resetSettings = () =>
 {
 	//Zresetowanie predkosci paletek.
 	padLSpeed = padLSpeedConst;
