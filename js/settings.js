@@ -1,5 +1,5 @@
 //Zmien zawartosc i wyglad w menu ustawien po kliknieciu ktoregos z 4 przyciskow ustawien.
-const settingMain = e =>
+const settingsMain = e =>
 {
     if(e === undefined) settingChoose = 0; //Jesli nie podeslano argumentu eventu to uznaj, ze wybrano przycisk pierwszy, czyli 'MODE'.
     else settingChoose = e.target.dataset.key; //Zmienna wskazuje, ktory przycisk w menu ustawien zostal wybrany.
@@ -27,7 +27,7 @@ const settingMain = e =>
 }
 
 //Wywolaj odpowiednie funkcje po kliknieciu przycisku 'APPLY' w menu ustawien.
-const settingApply = () =>
+const settingsApply = () =>
 {
     if(settingChoose == 0) changePaddleSpeed();
     else if(settingChoose == 1) changeBallSpeed();

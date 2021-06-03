@@ -16,10 +16,10 @@ const init = () =>
     window.addEventListener('keydown', keyboard);
 
     //Ustawienie nasluchiwania na przyciski i inputy kolorow w menu ustawien.
-    chooseButtons.forEach(button => button.addEventListener('click', settingMain));
+    chooseButtons.forEach(button => button.addEventListener('click', settingsMain));
     radioModes.forEach(mode => mode.addEventListener('click', changeMode));
     radioModesCom.forEach(mode => mode.addEventListener('click', changeModeCom));
-    applyButtons.forEach(button => button.addEventListener('click', settingApply));
+    applyButtons.forEach(button => button.addEventListener('click', settingsApply));
     inpColors.forEach(color => color.addEventListener('input', changeColor));
     scoreResetButton.addEventListener('click', resetScore);
     settingsResetButton.addEventListener('click', resetSetting);

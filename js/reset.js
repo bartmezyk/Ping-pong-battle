@@ -44,7 +44,7 @@ const resetSetting = () =>
 	changeMode();
 	changeModeCom();
 
-	settingMain(); //Reset wygladu w menu ustawien.
+	settingsMain(); //Reset wygladu w menu ustawien.
 
 	//Zresetowanie predkosci aktualnej pilki.
 	ballXSpeed = ballXSpeedStart;
