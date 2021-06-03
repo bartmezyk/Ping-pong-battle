@@ -29,6 +29,9 @@ const changeMode = e =>
 
 		settModeBtn.classList.remove('applyButton--hidden');
 	}
+
+	//Aktualizuj inputy poprzez wstawienie do nich wartosci odpowiednich zmiennych.
+    inputsSet();
 }
 
 //Zmien poziom gracza komputerowego.
@@ -68,6 +71,7 @@ const changeBallSpeed = () =>
 		if(ballXSpeed > 0 ) ballMoveRight = true;
 		else ballMoveRight = false;
 
+		showSpeed();
 		changeBallPositionToCenter();
 	}
 
@@ -78,6 +82,7 @@ const changeBallSpeed = () =>
 
 		ballYSpeed = ballYSpeedSet;
 
+		showSpeed();
 		changeBallPositionToCenter();
 	}
 
@@ -164,18 +169,3 @@ const changeColor = e =>
 	drawPaddleRight();
 	drawBall();
 }
-
-inpColors.forEach(color =>
-{
-	color.addEventListener('input', changeColor);
-});
-
-radioModes.forEach(mode =>
-{
-    mode.addEventListener('click', changeMode);
-});
-
-radioModesCom.forEach(mode =>
-{
-	mode.addEventListener('click', changeModeCom);
-});

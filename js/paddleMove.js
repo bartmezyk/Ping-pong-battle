@@ -66,6 +66,3 @@ const computerPaddleMove = () =>
     //...na gorze.
 	else if(padRY <= 0) padRY = 0;
 }
-
-//Ruch myszki w polu gry.
-canvas.addEventListener('mousemove', playerPaddleMove);

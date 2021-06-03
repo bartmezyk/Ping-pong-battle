@@ -41,6 +41,3 @@ const gameOver = defeatedPaddle =>
 
 	showSpeed();
 }
-
-//60 razy na sekunde pole gry odswiezane.
-setInterval(gameRefresh, 1000/60);

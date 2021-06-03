@@ -34,15 +34,3 @@ const settingApply = () =>
     else if(settingChoose == 2) changeSize();
     else console.error(`Wrong value in "settingChoose" variable: ${settingChoose}.`);
 }
-
-inputsSet();
-
-chooseButtons.forEach(button =>
-{
-    button.addEventListener('click', settingMain);
-});
-
-applyButtons.forEach(button =>
-{
-    button.addEventListener('click', settingApply);
-});

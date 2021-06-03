@@ -49,9 +49,10 @@ const resetSetting = () =>
 	//Zresetowanie predkosci aktualnej pilki.
 	ballXSpeed = ballXSpeedSet;
 	ballYSpeed = ballYSpeedSet;
+	showSpeed();
 
+	//Zresetowanie polozenia pilki i paletek na srodek wzdluz osi Y.
 	changeBallPositionToCenter();
+	padLY = canvasHeight / 2 - padLHeight / 2;
+	padRY = canvasHeight / 2 - padRHeight / 2;
 }
-
-scoreResetButton.addEventListener('click', resetScore);
-settingsResetButton.addEventListener('click', resetSetting);

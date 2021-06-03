@@ -57,5 +57,3 @@ const inputsSet = () =>
     inpColorBall.value = ballColor;
 }
 
-inputsPrepare();
-

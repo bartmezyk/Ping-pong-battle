@@ -26,6 +26,3 @@ const keyDown = e =>
         else if(padRY <= 0) padRY = 0; //... na gorze.
 	}
 }
-
-//Klikniecie klawisza na klawiaturze.
-window.addEventListener('keydown', keyDown);
