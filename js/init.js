@@ -24,9 +24,6 @@ const init = () =>
     scoreResetButton.addEventListener('click', resetScore);
     settingsResetButton.addEventListener('click', resetSettings);
 
-    //Automatycznie ustawiajacy sie aktualny rok w footerze glownym.
-    mainFooter.innerHTML = `Bartosz Mężyk ${year} &copy; Wszelkie prawa zastrzeżone.`;
-
     //Wstaw wartosci odpowiednich zmiennych do inputow w menu ustawien.
     inputsSet();
 

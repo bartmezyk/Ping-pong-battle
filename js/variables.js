@@ -156,8 +156,6 @@ const applyButtons = document.querySelectorAll('.applyButton');
 const scoreResetButton = document.querySelector('.score__reset');
 const settingsResetButton = document.querySelector('.settings__reset');
 
-const mainFooter = document.querySelector('.mainFooter');
-
 //----- radioboxy -----
 const radioModes = document.querySelectorAll('.mode');
 
